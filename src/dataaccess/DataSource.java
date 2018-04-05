@@ -1,4 +1,4 @@
-package model;
+package dataaccess;
 
 import java.sql.Connection;
 

@@ -1,6 +1,8 @@
-package model;
+package dataaccess;
 
 import java.util.List;
+
+import transfer.Employee;
 
 public interface EmpoyeeDAO {
 

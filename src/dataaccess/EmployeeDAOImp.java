@@ -1,8 +1,9 @@
-package model;
+package dataaccess;
 
 import java.util.List;
 
 import javafx.util.Builder;
+import transfer.Employee;
 
 public class EmployeeDAOImp implements EmpoyeeDAO {
 

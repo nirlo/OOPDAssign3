@@ -1,9 +1,9 @@
-package controller;
+package logic;
 
 import java.util.List;
 
-import model.Employee;
-import model.EmpoyeeDAO;
+import dataaccess.EmpoyeeDAO;
+import transfer.Employee;
 
 public class EmployeeLogic {
 	/**

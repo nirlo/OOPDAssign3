@@ -1,4 +1,4 @@
-package controller;
+package factorybuilder;
 
 import java.sql.ResultSet;
 import java.util.List;

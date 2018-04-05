@@ -1,10 +1,10 @@
-package controller;
+package factorybuilder;
 
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
-public class EmployeeFactory extends AbstractFactory {
+public class DeptManagerFactory extends AbstractFactory {
 
 	/**
 	 * 
