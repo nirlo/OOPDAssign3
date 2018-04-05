@@ -4,11 +4,11 @@ public class Department {
 	/**
 	 * 
 	 */
-	public final String COL_NAME = "name";
+	public final String COL_NAME = "dept_no";
 	/**
 	 * 
 	 */
-	public final String COL_CODE = "employee_num";
+	public final String COL_CODE = "dept_name";
 	/**
 	 * 
 	 */
@@ -16,38 +16,24 @@ public class Department {
 	/**
 	 * 
 	 */
-	private String code;
+	private int code;
 	
 	
 	/**
 	 * 
 	 */
 	public Department() {
-		//TODO
+		this("name", 0);
 	}
 
 	/**
 	 * 
 	 */
-	public Department(String name, String code) {
-		//TODO
+	public Department(String name, int code) {
+		this.name = name;
+		this.code = code;
 	}
 
-	/**
-	 * 
-	 */
-	public int hashCode() {
-		//TODO
-		return 0;
-	}
-
-	/**
-	 * 
-	 */
-	public boolean equals(Object obj) {
-		//TODO
-		return false;
-	}
 
 	/**
 	 * 
@@ -57,7 +43,7 @@ public class Department {
 	/**
 	 * 
 	 */
-	public String getCode() {return code;}
+	public int getCode() {return code;}
 
 	/**
 	 * 
@@ -69,8 +55,44 @@ public class Department {
 	/**
 	 * 
 	 */
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + code;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Department other = (Department) obj;
+		if (code != other.code)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
+	
+	
 }
