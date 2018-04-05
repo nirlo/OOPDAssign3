@@ -1,4 +1,4 @@
-package factorybuilder;
+package factory;
 
 public class DTOFactoryCreator {
 	/**

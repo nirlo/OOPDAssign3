@@ -1,4 +1,4 @@
-package factorybuilder;
+package builder;
 
 import java.sql.ResultSet;
 import java.util.Map;

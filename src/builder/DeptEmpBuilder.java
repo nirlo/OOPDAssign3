@@ -1,11 +1,11 @@
-package factorybuilder;
+package builder;
 
 import java.sql.ResultSet;
 import java.util.Map;
 
 import transfer.Employee;
 
-public class TitlesBuilder {
+public class DeptEmpBuilder {
 	//Class attributes
 	/**
 	 * 
@@ -28,7 +28,7 @@ public class TitlesBuilder {
 	/**
 	 * Initial constructor
 	 */
-	public TitlesBuilder() {
+	public DeptEmpBuilder() {
 		COL_NAME = null;
 		COL_CODE = null;
 		//TODO

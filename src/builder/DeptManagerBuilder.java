@@ -1,11 +1,11 @@
-package factorybuilder;
+package builder;
 
 import java.sql.ResultSet;
 import java.util.Map;
 
 import transfer.Employee;
 
-public class SalariesBuilder {
+public class DeptManagerBuilder {
 	//Class attributes
 	/**
 	 * 
@@ -28,7 +28,7 @@ public class SalariesBuilder {
 	/**
 	 * Initial constructor
 	 */
-	public SalariesBuilder() {
+	public DeptManagerBuilder() {
 		COL_NAME = null;
 		COL_CODE = null;
 		//TODO
