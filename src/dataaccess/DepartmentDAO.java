@@ -8,7 +8,7 @@ import transfer.Employee;
 
 public class DepartmentDAO implements DAO<Department> {
 	
-	private final String GET_ALL_DEPARTMENT = "SELECT ";
+	private final String GET_ALL_DEPARTMENT = "SELECT * FROM salaries ORDER BY emp_no";
 	
 	private final String GET_BY_CODE_DEPARTMENT;
 	
