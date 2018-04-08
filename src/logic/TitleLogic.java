@@ -2,44 +2,41 @@ package logic;
 
 import java.util.List;
 
-import transfer.Employee;
+import transfer.Title;
 import dataaccess.DAO;
-import dataaccess.EmployeeDAO;
+import dataaccess.TitleDAO;
 
-public class EmployeeLogic implements Logic<Employee> {
+public class TitleLogic implements Logic<Title> {
 	
 	private static final int NUMBER_MAX_LENGTH = 45;
 	private static final int NAME_MAX_LENGTH = 45;
-	private static final int GENDER_MAX_LENGTH = 1;
 	
-	private DAO<Employee> DAO = null;
+	private DAO<Title> DAO = null;
 	
-	public EmployeeLogic() {
-		DAO = new EmployeeDAO();
+	public TitleLogic() {
+		DAO = new TitleDAO();
 	}
 
 	@Override
-	public List<Employee> getAll() {
+	public List<Title> getAll() {
 		return DAO.getAll();
 	}
 
 	@Override
-	public void add(Employee t) {
+	public void add(Title t) {
 		clean(t);
 		validate(t);
 		DAO.add(t);
 	}
 
 	@Override
-	public void clean(Employee t) {
+	public void clean(Title t) {
 		
 	}
 
 	@Override
-	public void validate(Employee t) {
-		validateString(t.getFirstName(), "first_name", NAME_MAX_LENGTH, false);
-		validateString(t.getLastName(), "last_name", NAME_MAX_LENGTH, false);
-		validateString(t.getGender(), "gender", GENDER_MAX_LENGTH, false);
+	public void validate(Title t) {
+		//validateString(t.getName(), "first_name", NAME_MAX_LENGTH, false);
 	}
 
 	@Override
