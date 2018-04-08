@@ -61,7 +61,7 @@ public class EmployeeBuilder {
 		
 	}
 
-	public Employee getAll(){
+	public Employee get(){
 		return employee;
 	}
 }
