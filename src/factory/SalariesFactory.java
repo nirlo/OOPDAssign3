@@ -4,13 +4,15 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
-public class SalariesFactory extends AbstractFactory {
+import transfer.Salary;
+
+public class SalariesFactory extends AbstractFactory<Salary> {
 
 	/**
 	 * 
 	 */
 	@Override
-	public <T> T createFromResultSet(ResultSet rs) {
+	public Salary createFromResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -19,7 +21,7 @@ public class SalariesFactory extends AbstractFactory {
 	 * 
 	 */
 	@Override
-	public List<?> createListFromResultSet(ResultSet rs) {
+	public List<Salary> createListFromResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -28,7 +30,7 @@ public class SalariesFactory extends AbstractFactory {
 	 * 
 	 */
 	@Override
-	public <T> T createFromMap(Map<String, String[]> map) {
+	public Salary createFromMap(Map<String, String[]> map) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -36,7 +38,7 @@ public class SalariesFactory extends AbstractFactory {
 	 * 
 	 */
 	@Override
-	public List<?> createListResultSet(ResultSet rs) {
+	public List<Salary> createListResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		return null;
 	}
