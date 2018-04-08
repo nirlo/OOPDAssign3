@@ -1,7 +1,7 @@
 package dataaccess;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import javafx.util.Builder;
 import transfer.Employee;
 
@@ -66,7 +66,9 @@ public class EmployeeDAOImp implements EmpoyeeDAO {
 	 */
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
+		//TODO create connection
+		List<Employee> listEmp = new ArrayList<>();
+		
 		return null;
 	}
 

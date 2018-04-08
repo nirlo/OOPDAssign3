@@ -5,18 +5,17 @@ import java.sql.Date;
 public class Employee {
 	
 	
-	public final String COL_EMP_NO = "emp_no";
+	public static final String COL_EMP_NO = "emp_no";
 
-
-	public final String COL_BIRTH_DATE = "birth_date";
+	public static final String COL_BIRTH_DATE = "birth_date";
 	
-	public final String COL_FIRST_NAME = "first_name";
+	public static final String COL_FIRST_NAME = "first_name";
 	
-	public final String COL_LAST_NAME = "last_name";
+	public static final String COL_LAST_NAME = "last_name";
 	
-	public final String COL_GENDER = "gender";
+	public static final String COL_GENDER = "gender";
 	
-	public final String COL_HIRE_DATE = "hire_date";
+	public static final String COL_HIRE_DATE = "hire_date";
 
 
 	private int empNo;

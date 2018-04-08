@@ -2,21 +2,21 @@ package builder;
 
 import java.sql.ResultSet;
 import java.util.Map;
-
 import transfer.Employee;
+import java.sql.Date;
 
 public class EmployeeBuilder {
 	//Class attributes
 	/**
-	 * 
+	 *
 	 */
-	private final String COL_NAME;
+	private static final String COL_NAME = null;
 	/**
-	 * 
+	 *
 	 */
-	private final String COL_CODE;
+	private static final String COL_CODE = null;
 	/**
-	 * 
+	 *
 	 */
 	private Employee employee = new Employee();
 	
@@ -28,47 +28,40 @@ public class EmployeeBuilder {
 	/**
 	 * Initial constructor
 	 */
-	public EmployeeBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
+	
+	public EmployeeBuilder(Map<String, String> map){
+		this.setEmpNo(map);
+		this.setFirstName(map);
+		this.setLastName(map);
+		this.setBirthDate(map);
+		this.setGender(map);
+		this.setHireDate(map);
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
-	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
+	public void setEmpNo(Map<String, String> map){
+		employee.setEmpNo(Integer.valueOf(map.get(Employee.COL_EMP_NO)));
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
+	public void setFirstName(Map<String, String> map){
+		employee.setFirstName(map.get(Employee.COL_FIRST_NAME));
 	}
 	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
+	public void setLastName(Map<String, String> map){
+		employee.setLastName(map.get(Employee.COL_LAST_NAME));
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	public Employee get() {
+	
+	public void setBirthDate(Map<String, String> map){
+		employee.setBirthDate(Date.valueOf(map.get(Employee.COL_BIRTH_DATE)));
+	}
+	public void setGender(Map<String, String> map){
+		employee.setGender(map.get(Employee.COL_GENDER).toUpperCase());
+	}
+	public void setHireDate(Map<String, String> map){
+		employee.setBirthDate(Date.valueOf(map.get(Employee.COL_HIRE_DATE)));
+		
+	}
+
+	public Employee getAll(){
 		return employee;
 	}
 }
