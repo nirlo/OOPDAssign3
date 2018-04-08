@@ -3,7 +3,7 @@ package factory;
 import java.sql.ResultSet;
 import java.util.List;
 
-public abstract class AbstractFactory implements Factory {
+public abstract class AbstractFactory<T> implements Factory<T> {
 
 	/**
 	 * 
