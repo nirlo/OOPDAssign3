@@ -23,8 +23,9 @@ public class DeptEmployeeDAO implements DAO<DeptEmployee> {
 	
 	
 	public DeptEmployeeDAO() {
-		GET_ALL_DEPT_EMPLOYEE = "";
-		GET_BY_CODE_DEPT_EMPLOYEE = "";
+		
+		GET_ALL_DEPT_EMPLOYEE = "Select * from employee;";
+		GET_BY_CODE_DEPT_EMPLOYEE = "sel";
 		INSERT_DEPT_EMPLOYEE = "";
 		UPDATE_DEPT_EMPLOYEE = "";
 		DELETE_DEPT_EMPLOYEE = "";

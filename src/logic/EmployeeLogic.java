@@ -2,7 +2,7 @@ package logic;
 
 import java.util.List;
 
-import dataaccess.EmpoyeeDAO;
+import dataaccess.EmployeeDAO;
 import transfer.Employee;
 
 public class EmployeeLogic {
@@ -17,7 +17,7 @@ public class EmployeeLogic {
 	/**
 	 * 
 	 */
-	private EmpoyeeDAO courseDAO;
+	private EmployeeDAO courseDAO;
 	
 	
 	/**
