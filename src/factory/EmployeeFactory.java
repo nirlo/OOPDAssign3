@@ -15,7 +15,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 *
 	 */
 	@Override
-	public <T> T createFromResultSet(ResultSet rs) {
+	public  Employee createFromResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -24,7 +24,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 *
 	 */
 	@Override
-	public List<?> createListFromResultSet(ResultSet rs) {
+	public List<Employee> createListFromResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -33,7 +33,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 *
 	 */
 	@Override
-	public <T> T createFromMap(Map<String, String[]> map) {
+	public Employee createFromMap(Map<String, String[]> map) {
 		// TODO Auto-generated method stub
 		return null;
 	}

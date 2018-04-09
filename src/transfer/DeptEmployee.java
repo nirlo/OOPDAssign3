@@ -70,7 +70,7 @@ public class DeptEmployee {
 		this.toDate = toDate;
 	}
 
-	public int getEmpNO() {
+	public int getEmpNo() {
 		return emp_no;
 	}
 

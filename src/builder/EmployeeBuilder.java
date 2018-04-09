@@ -5,7 +5,7 @@ import java.util.Map;
 import transfer.Employee;
 import java.sql.Date;
 
-public class EmployeeBuilder {
+public class EmployeeBuilder implements Builder<Employee> {
 	//Class attributes
 	/**
 	 *
