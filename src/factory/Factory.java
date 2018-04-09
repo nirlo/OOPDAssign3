@@ -27,5 +27,6 @@ public interface Factory<T> {
 	 */
 	public T createFromMap(Map<String, String[]> map);
 	
+	public List<?> createListFromMap(Map<String, String[]> map);
 	
 }

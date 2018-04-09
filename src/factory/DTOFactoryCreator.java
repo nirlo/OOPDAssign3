@@ -4,28 +4,24 @@ public class DTOFactoryCreator {
 	/**
 	 * 
 	 */
-	private final String PACKAGE = "dtofactory";
+	private static final String PACKAGE = "dtofactory";
 	/**
 	 * 
 	 */
-	private final String FACTORY = "Factory";
+	private static final String FACTORY = "Factory";
 	
 	
 	/**
 	 * 
 	 */
-	private DTOFactoryCreator() {
-		//TODO 
-	}
-	
+	private DTOFactoryCreator() { } 
 	/**
 	 * 
 	 * @param factoryName
 	 * @return
 	 */
-	public Factory getFactory(String factoryName) {
+	public static Factory<T> getFactory(String factoryName) {
 		return null;
-		//TODO
 	}
 	
 	/**
@@ -33,7 +29,7 @@ public class DTOFactoryCreator {
 	 * @param type
 	 * @return
 	 */
-	public Factory createBuilder(Class<?> type) {
+	public static Factory createBuilder(Class<?> type) {
 		return null;
 		//TODO
 	}

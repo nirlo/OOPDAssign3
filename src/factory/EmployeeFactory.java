@@ -1,15 +1,18 @@
 package factory;
 
+import builder.EmployeeBuilder;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
 import transfer.Employee;
 
 public class EmployeeFactory extends AbstractFactory<Employee> {
-
+	public static final String TAB_NAME = "employees";
+	
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public  Employee createFromResultSet(ResultSet rs) {
@@ -18,7 +21,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	}
 	
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public List<Employee> createListFromResultSet(ResultSet rs) {
@@ -27,7 +30,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	}
 	
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public Employee createFromMap(Map<String, String[]> map) {
@@ -35,14 +38,21 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 		return null;
 	}
 	/**
-	 * 
+	 *
 	 */
 	@Override
-	public List<Employee> createListResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<?> createListResultSet(ResultSet rs) throws SQLException {
+		//At this particular point each list is an entry of individual row
+		List<Employee> employees = Collections.EMPTY_LIST;
+		for (Map<String, String> map: (List<Map<String, String>>)super.createFromResultSet(rs)){
+			employees.add(new EmployeeBuilder(map).get());
+		}
+		return employees;
+		
+		
+		
 	}
-
+	
 	
 	
 }
