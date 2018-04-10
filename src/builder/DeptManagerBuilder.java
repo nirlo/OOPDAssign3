@@ -1,7 +1,9 @@
 package builder;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.util.Map;
+import transfer.DeptManager;
 
 import transfer.Employee;
 
@@ -18,7 +20,7 @@ public class DeptManagerBuilder {
 	/**
 	 * 
 	 */
-	private Employee employee = new Employee();
+	private DeptManager deptManager = new DeptManager();
 	
 	/**
 	 * Class Methods
@@ -28,47 +30,31 @@ public class DeptManagerBuilder {
 	/**
 	 * Initial constructor
 	 */
-	public DeptManagerBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
+	public DeptManagerBuilder(Map<String, String> map) {
+		this.setDeptNo(map);
+		this.setEmpNo(map);
+		this.setFromDate(map);
+		this.setToDate(map);
+	}
+
+	public void setEmpNo(Map<String, String> map){
+		deptManager.setEmpNo(Integer.valueOf(map.get(DeptManager.COL_EMP_NO)));
+	}
+
+	public void setDeptNo(Map<String, String> map){
+		deptManager.setDeptNo(Integer.valueOf(map.get(DeptManager.COL_DEPT_NO)));
+	}
+
+	public void setFromDate(Map<String, String> map){
+		deptManager.setFromDate(Date.valueOf(map.get(DeptManager.COL_FROM_DATE)));
+	}
+
+	public void setToDate(Map<String, String> map){
+		deptManager.setToDate(Date.valueOf(map.get(DeptManager.COL_TO_DATE)));
+		
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
-	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
-	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
-	}
-	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
-	}
-	/**
-	 * 
-	 * @return
-	 */
-	public Employee get() {
-		return employee;
+	public DeptManager get() {
+		return deptManager;
 	}
 }

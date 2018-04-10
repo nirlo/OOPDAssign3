@@ -6,19 +6,19 @@ public class DeptEmployee {
 	/**
 	 * 
 	 */
-	public final String COL_EMP_NO = "emp_no";
+	public static final String COL_EMP_NO = "emp_no";
 	/**
 	 * 
 	 */
-	public final String COL_DEPT_CODE = "dept_num";
+	public static final String COL_DEPT_CODE = "dept_num";
 	/**
 	 * 
 	 */
-	public final String COL_FROM_DATE = "from_date";
+	public static final String COL_FROM_DATE = "from_date";
 	/**
 	 * 
 	 */
-	public final String COL_TO_DATE = "to_date";
+	public static final String COL_TO_DATE = "to_date";
 	/**
 	 * 
 	 */
@@ -82,7 +82,7 @@ public class DeptEmployee {
 		return dept_no;
 	}
 
-	public void setToDate(int dept_no) {
+	public void setDeptNo(int dept_no) {
 		this.dept_no = dept_no;
 	}
 

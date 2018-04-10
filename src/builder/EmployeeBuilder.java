@@ -6,18 +6,6 @@ import transfer.Employee;
 import java.sql.Date;
 
 public class EmployeeBuilder implements Builder<Employee> {
-	//Class attributes
-	/**
-	 *
-	 */
-	private static final String COL_NAME = null;
-	/**
-	 *
-	 */
-	private static final String COL_CODE = null;
-	/**
-	 *
-	 */
 	private Employee employee = new Employee();
 	
 	/**

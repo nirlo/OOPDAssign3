@@ -1,9 +1,11 @@
 package builder;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.util.Map;
 
 import transfer.Employee;
+import transfer.Title;
 
 public class TitlesBuilder {
 	//Class attributes
@@ -18,7 +20,7 @@ public class TitlesBuilder {
 	/**
 	 * 
 	 */
-	private Employee employee = new Employee();
+	private Title title = new Title();
 	
 	/**
 	 * Class Methods
@@ -28,47 +30,30 @@ public class TitlesBuilder {
 	/**
 	 * Initial constructor
 	 */
-	public TitlesBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
+	public TitlesBuilder(Map<String, String> map) {
+		this.setEmpNo(map);
+		this.setTitle(map);
+		this.setFromDate(map);
+		this.setToDate(map);
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
+	public void setEmpNo(Map<String, String> map){
+		title.setEmpNo(Integer.valueOf(map.get(Title.COL_EMP_NO)));
 	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
+
+	public void setTitle(Map<String, String> map){
+		title.setTitle(map.get(Title.COL_TITLE));
 	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
+
+	public void setFromDate(Map<String, String> map){
+		title.setFromDate(Date.valueOf(map.get(Title.COL_FROM_DATE)));
 	}
-	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
+
+	public void setToDate(Map<String, String> map){
+		title.setToDate(Date.valueOf(map.get(Title.COL_TO_DATE)));
+		
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	public Employee get() {
-		return employee;
+	public Title get() {
+		return title;
 	}
 }

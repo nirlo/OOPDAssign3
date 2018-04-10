@@ -24,31 +24,25 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 *
 	 */
 	@Override
-	public List<Employee> createListFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	/**
-	 *
-	 */
-	@Override
 	public Employee createFromMap(Map<String, String[]> map) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	/**
 	 *
+	 * @return
+	 * @throws java.sql.SQLException
 	 */
 	@Override
-	public List<?> createListResultSet(ResultSet rs) throws SQLException {
-		//At this particular point each list is an entry of individual row
+	public List<Employee> createListFromResultSet(ResultSet rs) throws SQLException {
+		return createListFromMap(super.resultSetToMap(rs));
+	}
+	@Override
+	public List<Employee> createListFromMap(Map<String,String[]> map) throws SQLException{
 		List<Employee> employees = Collections.emptyList();
-		for (Map<String, String> map: (List<Map<String, String>>)super.createFromResultSet(rs)){
-			employees.add(new EmployeeBuilder(map).get());
+		for (Map<String, String> m: (List<Map<String, String>>)super.createListFromMap(map)){
+			employees.add(new EmployeeBuilder(m).get());
 		}
 		return employees;
-		
 		
 		
 	}

@@ -1,67 +1,56 @@
 package transfer;
 
+import java.util.Map;
+
 public class Department {
 	/**
-	 * 
+	 *
 	 */
-	public final String COL_NAME = "dept_no";
+	public static final String COL_NAME = "dept_no";
 	/**
-	 * 
+	 *
 	 */
-	public final String COL_CODE = "dept_name";
+	public static final String COL_CODE = "dept_name";
 	/**
-	 * 
+	 *
 	 */
 	private String name;
 	/**
-	 * 
+	 *
 	 */
 	private int code;
 	
 	
-	/**
-	 * 
-	 */
 	public Department() {
-		this("name", 0);
 	}
-
 	/**
-	 * 
-	 */
-	public Department(String name, int code) {
-		this.name = name;
-		this.code = code;
-	}
-
-
-	/**
-	 * 
+	 *
 	 */
 	public String getName() {return name;}
-
+	
 	/**
-	 * 
+	 *
 	 */
 	public int getCode() {return code;}
-
+	
 	/**
-	 * 
+	 *
+	 * @param map
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	/**
-	 * 
+	 *
 	 */
 	public void setCode(int code) {
 		this.code = code;
 	}
-
+	
 	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+	* @see java.lang.Object#hashCode()
+	*/
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,10 +59,10 @@ public class Department {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
+	
 	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+	* @see java.lang.Object#equals(java.lang.Object)
+	*/
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -92,7 +81,7 @@ public class Department {
 			return false;
 		return true;
 	}
-
+	
 	
 	
 }

@@ -1,24 +1,11 @@
 package builder;
 
-import java.sql.ResultSet;
 import java.util.Map;
-
-import transfer.Employee;
+import transfer.Department;
 
 public class DepartmentsBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
-	private Employee employee = new Employee();
+	private Department department = new Department();
 	
 	/**
 	 * Class Methods
@@ -29,46 +16,25 @@ public class DepartmentsBuilder {
 	 * Initial constructor
 	 */
 	public DepartmentsBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
 	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
+
+	public DepartmentsBuilder(Map<String, String> map){
+		this.setName(map);
+		this.setCode(map);
 	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
+
+	public void setName(Map<String, String> map){
+		department.setName(map.get(Department.COL_NAME));
 	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
-	}
-	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
+
+	public void setCode(Map<String, String> map){
+		department.setCode(Integer.valueOf(map.get(Department.COL_CODE)));
 	}
 	/**
 	 * 
 	 * @return
 	 */
-	public Employee get() {
-		return employee;
+	public Department get(){
+		return this.department;
 	}
 }
