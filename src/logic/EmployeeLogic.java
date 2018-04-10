@@ -8,7 +8,7 @@ import dataaccess.EmployeeDAO;
 
 public class EmployeeLogic implements Logic<Employee> {
 	
-	private static final int NUMBER_MAX_LENGTH = 45;
+	private static final int NUMBER_MAX = 999999999;
 	private static final int NAME_MAX_LENGTH = 45;
 	private static final int GENDER_MAX_LENGTH = 1;
 	

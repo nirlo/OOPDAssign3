@@ -43,7 +43,7 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	@Override
 	public List<?> createListResultSet(ResultSet rs) throws SQLException {
 		//At this particular point each list is an entry of individual row
-		List<Employee> employees = Collections.EMPTY_LIST;
+		List<Employee> employees = Collections.emptyList();
 		for (Map<String, String> map: (List<Map<String, String>>)super.createFromResultSet(rs)){
 			employees.add(new EmployeeBuilder(map).get());
 		}

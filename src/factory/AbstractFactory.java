@@ -32,12 +32,12 @@ public abstract class AbstractFactory<T> implements Factory<T> {
 		return temp;	
 	}
 	@Override
-	public <T> T createFromResultSet(ResultSet rs){
+	public T createFromResultSet(ResultSet rs){
 		return null;
 	}
 	
 	@Override
-	public <T> T createFromMap(Map<String, String[]> map){
+	public T createFromMap(Map<String, String[]> map){
 		return null;
 	}
 	
