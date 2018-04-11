@@ -1,36 +1,32 @@
 package factory;
 
-public class DTOFactoryCreator {
-	/**
-	 * 
-	 */
-	private static final String PACKAGE = "dtofactory";
-	/**
-	 * 
-	 */
-	private static final String FACTORY = "Factory";
-	
-	
-	/**
-	 * 
-	 */
-	private DTOFactoryCreator() { } 
-	/**
-	 * 
-	 * @param factoryName
-	 * @return
-	 */
-	public static Factory<T> getFactory(String factoryName) {
-		return null;
-	}
-	
-	/**
-	 * 
-	 * @param type
-	 * @return
-	 */
-	public static Factory createBuilder(Class<?> type) {
-		return null;
-		//TODO
-	}
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Shariar
+ */
+public final class DTOFactoryCreator {
+
+    private static final String PACKAGE = "factory.";
+    private static final String FACTORY = "Factory";
+
+    private DTOFactoryCreator() {
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> Factory<T> getFactory(String factoryName) {
+        Factory<T> factory = null;
+        try {
+            factory = (Factory< T>) Class.forName(PACKAGE + factoryName + FACTORY).newInstance();
+        } catch (Exception ex) {
+            Logger.getLogger(DTOFactoryCreator.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return factory;
+    }
+
+    public static <T> Factory<T> createBuilder(Class<T> type) {
+        return getFactory(type.getSimpleName());
+    }
 }
