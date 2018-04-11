@@ -1,5 +1,6 @@
 package logic;
 
+import java.sql.Date;
 import java.util.List;
 
 import transfer.Employee;
@@ -53,6 +54,17 @@ public class EmployeeLogic implements Logic<Employee> {
         } else if (value.length() > max) {
             throw new IllegalStateException(String.format("%s cannot exceed %d characters", fieldName, max));
         }
+	}
+
+	@Override
+	public void validateDate(Date value, String fieldName, long max, long min, boolean isNullAllowed) {
+		//
+	}
+
+	@Override
+	public void validateInt(int value, String fieldName, int max, int min, boolean isNullAllowed) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
