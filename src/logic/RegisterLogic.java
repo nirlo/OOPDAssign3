@@ -1,5 +1,8 @@
 package logic;
 
-public class RegisterLogic {
+import factory.DTOFactoryCreator;
+import factory.Factory;
 
+public class RegisterLogic {
+	
 }
