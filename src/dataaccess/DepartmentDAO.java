@@ -1,5 +1,6 @@
 package dataaccess;
 
+import factory.DTOFactoryCreator;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +31,7 @@ public class DepartmentDAO implements DAO<Department> {
 	
 	
 	public DepartmentDAO() {
-		factory = new DepartmentsFactory();
+		factory = DTOFactoryCreator.getFactory(Department.class);
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class DepartmentDAO implements DAO<Department> {
 			con = ds.createConnection();
 			pstmt = con.prepareStatement(GET_ALL_DEPARTMENT);
 			rs = pstmt.executeQuery();
-			list = factory.createListFromResultSet(rs);
+			list = (List<Department>)factory.createListFromResultSet(rs);
 			
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);

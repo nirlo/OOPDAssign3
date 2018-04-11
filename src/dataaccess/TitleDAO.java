@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import builder.Builder;
+import factory.DTOFactoryCreator;
 import factory.Factory;
 import factory.TitlesFactory;
 import transfer.Employee;
@@ -33,7 +34,7 @@ public class TitleDAO implements DAO<Title> {
 	
 	
 	public TitleDAO() {
-		factory = new TitlesFactory();
+		factory = DTOFactoryCreator.getFactory(Title.class);
 	}
 
 	@Override
@@ -47,7 +48,7 @@ public class TitleDAO implements DAO<Title> {
 			con = ds.createConnection();
 			pstmt = con.prepareStatement(GET_ALL_TITLES);
 			rs = pstmt.executeQuery();
-			list = factory.createListFromResultSet(rs);
+			list = (List<Title>)factory.createListFromResultSet(rs);
 			
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
