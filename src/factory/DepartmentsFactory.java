@@ -17,9 +17,8 @@ public class DepartmentsFactory extends AbstractFactory<Department> {
 	 * @return 
 	 */
 	@Override
-	public <T> T createFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public Department createFromResultSet(ResultSet rs) throws SQLException{
+		return (Department) super.createFromResultSet(rs);
 	}
 	
 	/**
@@ -43,9 +42,8 @@ public class DepartmentsFactory extends AbstractFactory<Department> {
 	 * 
 	 */
 	@Override
-	public <T> T createFromMap(Map<String, String[]> map) {
-		// TODO Auto-generated method stub
-		return null;
+	public Department createFromMap(Map<String, String[]> map) throws SQLException{
+		return (Department) super.createFromMap(map);
 	}
 
 	

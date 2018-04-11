@@ -1,11 +1,9 @@
 package builder;
 
 import java.sql.Date;
-import java.sql.ResultSet;
 import java.util.Map;
 import transfer.DeptEmployee;
 
-import transfer.Employee;
 
 public class DeptEmpBuilder {
 	//Class attributes

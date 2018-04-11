@@ -15,17 +15,16 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 *
 	 */
 	@Override
-	public  Employee createFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public  Employee createFromResultSet(ResultSet rs) throws SQLException{
+		return (Employee) super.createFromResultSet(rs);
 	}
 	
 	/**
 	 *
 	 */
 	@Override
-	public Employee createFromMap(Map<String, String[]> map) {
-		return null;
+	public Employee createFromMap(Map<String, String[]> map) throws SQLException{
+		return (Employee) super.createFromMap(map);
 	}
 	/**
 	 *

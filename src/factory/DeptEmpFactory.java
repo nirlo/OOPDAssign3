@@ -14,17 +14,16 @@ public class DeptEmpFactory extends AbstractFactory<DeptEmployee> {
 	 *
 	 */
 	@Override
-	public  DeptEmployee createFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public  DeptEmployee createFromResultSet(ResultSet rs) throws SQLException{
+		return (DeptEmployee) super.createFromResultSet(rs);
 	}
 	
 	/**
 	 *
 	 */
 	@Override
-	public DeptEmployee createFromMap(Map<String, String[]> map) {
-		return null;
+	public DeptEmployee createFromMap(Map<String, String[]> map) throws SQLException{
+		return (DeptEmployee) super.createFromMap(map);
 	}
 	/**
 	 *

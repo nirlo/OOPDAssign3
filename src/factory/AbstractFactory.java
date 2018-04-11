@@ -35,13 +35,13 @@ public abstract class AbstractFactory<T> implements Factory<T> {
 		return temp;	
 	}
 	@Override
-	public T createFromResultSet(ResultSet rs){
-		return null;
+	public T createFromResultSet(ResultSet rs) throws SQLException{
+		return (T)this.createListFromResultSet(rs).get(0);
 	}
 	
 	@Override
-	public T createFromMap(Map<String, String[]> map){
-		return null;
+	public T createFromMap(Map<String, String[]> map) throws SQLException{
+		return (T) this.createListFromMap(map).get(0);
 	}
 
 	//Helper method

@@ -14,17 +14,16 @@ public class TitlesFactory extends AbstractFactory<Title>{
 	 *
 	 */
 	@Override
-	public  Title createFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public  Title createFromResultSet(ResultSet rs) throws SQLException{
+		return (Title) super.createFromResultSet(rs);
 	}
 	
 	/**
 	 *
 	 */
 	@Override
-	public Title createFromMap(Map<String, String[]> map) {
-		return null;
+	public Title createFromMap(Map<String, String[]> map) throws SQLException{
+		return (Title) super.createFromMap(map);
 	}
 	/**
 	 *
