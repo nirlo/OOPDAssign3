@@ -1,10 +1,7 @@
 package builder;
 
 import java.sql.Date;
-import java.sql.ResultSet;
 import java.util.Map;
-
-import transfer.Employee;
 import transfer.Title;
 
 public class TitlesBuilder {
@@ -20,7 +17,7 @@ public class TitlesBuilder {
 	/**
 	 * 
 	 */
-	private Title title = new Title();
+	private final Title title = new Title();
 	
 	/**
 	 * Class Methods

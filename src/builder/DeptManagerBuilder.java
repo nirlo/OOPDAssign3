@@ -20,7 +20,7 @@ public class DeptManagerBuilder {
 	/**
 	 * 
 	 */
-	private DeptManager deptManager = new DeptManager();
+	private final DeptManager deptManager = new DeptManager();
 	
 	/**
 	 * Class Methods

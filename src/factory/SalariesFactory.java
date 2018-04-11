@@ -10,7 +10,7 @@ import java.util.Map;
 import transfer.Salary;
 
 public class SalariesFactory extends AbstractFactory<Salary> {
-
+	protected SalariesFactory(){}
 	/**
 	 *
 	 */

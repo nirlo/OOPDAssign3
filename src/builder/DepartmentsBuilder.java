@@ -5,7 +5,7 @@ import transfer.Department;
 
 public class DepartmentsBuilder {
 	//Class attributes
-	private Department department = new Department();
+	private final Department department = new Department();
 	
 	/**
 	 * Class Methods

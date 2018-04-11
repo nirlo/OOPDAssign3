@@ -20,7 +20,7 @@ public class SalariesBuilder {
 	/**
 	 * 
 	 */
-	private Salary salary = new Salary();
+	private final Salary salary = new Salary();
 
 	
 	/**

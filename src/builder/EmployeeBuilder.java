@@ -6,7 +6,7 @@ import transfer.Employee;
 import java.sql.Date;
 
 public class EmployeeBuilder implements Builder<Employee> {
-	private Employee employee = new Employee();
+	private final Employee employee = new Employee();
 	
 	/**
 	 * Class Methods

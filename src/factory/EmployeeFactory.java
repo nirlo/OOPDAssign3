@@ -9,7 +9,7 @@ import java.util.Map;
 import transfer.Employee;
 
 public class EmployeeFactory extends AbstractFactory<Employee> {
-	public static final String TAB_NAME = "employees";
+	protected EmployeeFactory(){}
 	
 	/**
 	 *

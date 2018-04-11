@@ -9,7 +9,9 @@ import java.util.Map;
 import transfer.DeptManager;
 
 public class DeptManagerFactory extends AbstractFactory<DeptManager>{
-	
+	protected DeptManagerFactory(){}
+
+	}
 	/**
 	 *
 	 */

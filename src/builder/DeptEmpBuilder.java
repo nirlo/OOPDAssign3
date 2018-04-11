@@ -18,7 +18,7 @@ public class DeptEmpBuilder {
 	/**
 	 *
 	 */
-	private DeptEmployee deptEmployee = new DeptEmployee();
+	private final DeptEmployee deptEmployee = new DeptEmployee();
 	
 	/**
 	 * Class Methods

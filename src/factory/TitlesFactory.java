@@ -9,7 +9,7 @@ import java.util.Map;
 import transfer.Title;
 
 public class TitlesFactory extends AbstractFactory<Title>{
-	
+	protected TitlesFactory(){}
 	/**
 	 *
 	 */

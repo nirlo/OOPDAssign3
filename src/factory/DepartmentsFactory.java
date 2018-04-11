@@ -9,7 +9,7 @@ import java.util.Map;
 import transfer.Department;
 
 public class DepartmentsFactory extends AbstractFactory<Department> {
-
+	protected DepartmentsFactory(){}
 	/**
 	 * 
 	 * @param <T>
