@@ -16,11 +16,11 @@ import transfer.Salary;
 
 public class SalaryDAO implements DAO<Salary> {
 	
-	private static final String GET_ALL_SALARIES = "SELECT * from Salary ORDER BY emp_no";
+	private static final String GET_ALL_SALARIES = "SELECT * from Salaries ORDER BY emp_no";
 	
-	private static final String GET_BY_CODE_SALARY = "SELECT * FROM Salary WHERE emp_no = ?";
+	private static final String GET_BY_CODE_SALARY = "SELECT * FROM Salaries WHERE emp_no = ?";
 	
-	private static final String INSERT_SALARY = "INSERT INTO Salary (emp_no, salary, from_date, to_date) VALUES (?, ?, ?, ?)";
+	private static final String INSERT_SALARY = "INSERT INTO Salaries (emp_no, salary, from_date, to_date) VALUES (?, ?, ?, ?)";
 	
 	private static final String UPDATE_SALARY = "UPDATE salaries SET salary = ? WHERE emp_no = ? ";
 	
