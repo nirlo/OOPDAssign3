@@ -9,25 +9,9 @@ import transfer.Salary;
 
 public class SalariesBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
-	private final Salary salary = new Salary();
 
-	
-	/**
-	 * Class Methods
-	 */
-	
-	
+	private final Salary salary = new Salary();
+		
 	/**
 	 * Initial constructor
 	 */

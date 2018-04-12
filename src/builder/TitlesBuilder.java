@@ -6,23 +6,8 @@ import transfer.Title;
 
 public class TitlesBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
+
 	private final Title title = new Title();
-	
-	/**
-	 * Class Methods
-	 */
-	
 	
 	/**
 	 * Initial constructor
