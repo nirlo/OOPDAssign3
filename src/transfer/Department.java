@@ -18,7 +18,7 @@ public class Department {
 	/**
 	 *
 	 */
-	private int code;
+	private String code;
 	
 	
 	public Department() {
@@ -31,7 +31,7 @@ public class Department {
 	/**
 	 *
 	 */
-	public int getCode() {return code;}
+	public String getCode() {return code;}
 	
 	/**
 	 *
@@ -44,7 +44,7 @@ public class Department {
 	/**
 	 *
 	 */
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 	
@@ -55,7 +55,7 @@ public class Department {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + code;
+		result = prime * result + code.hashCode();
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -72,7 +72,7 @@ public class Department {
 		if (getClass() != obj.getClass())
 			return false;
 		Department other = (Department) obj;
-		if (code != other.code)
+		if (!code.equals(other.code))
 			return false;
 		if (name == null) {
 			if (other.name != null)

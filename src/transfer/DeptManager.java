@@ -18,7 +18,7 @@ public class DeptManager {
 
 	private int empNo;
 	
-	private int deptNo;
+	private String deptNo;
 	
 	private Date fromDate;
 	
@@ -51,11 +51,11 @@ public class DeptManager {
 		this.empNo = empNo;
 	}
 
-	public int getDeptNo() {
+	public String getDeptNo() {
 		return deptNo;
 	}
 
-	public void setDeptNo(int deptNo) {
+	public void setDeptNo(String deptNo) {
 		this.deptNo = deptNo;
 	}
 
@@ -79,7 +79,7 @@ public class DeptManager {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + deptNo;
+		result = prime * result + deptNo.hashCode();
 		result = prime * result + empNo;
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
@@ -95,7 +95,7 @@ public class DeptManager {
 		if (getClass() != obj.getClass())
 			return false;
 		DeptManager other = (DeptManager) obj;
-		if (deptNo != other.deptNo)
+		if (!deptNo.equals(other.deptNo))
 			return false;
 		if (empNo != other.empNo)
 			return false;
