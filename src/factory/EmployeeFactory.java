@@ -3,6 +3,7 @@ package factory;
 import builder.EmployeeBuilder;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -10,22 +11,6 @@ import transfer.Employee;
 
 public class EmployeeFactory extends AbstractFactory<Employee> {
 	protected EmployeeFactory(){}
-	
-	/**
-	 *
-	 */
-	@Override
-	public  Employee createFromResultSet(ResultSet rs) throws SQLException{
-		return (Employee) super.createFromResultSet(rs);
-	}
-	
-	/**
-	 *
-	 */
-	@Override
-	public Employee createFromMap(Map<String, String[]> map) throws SQLException{
-		return (Employee) super.createFromMap(map);
-	}
 	/**
 	 *
 	 * @return
@@ -33,19 +18,14 @@ public class EmployeeFactory extends AbstractFactory<Employee> {
 	 */
 	@Override
 	public List<Employee> createListFromResultSet(ResultSet rs) throws SQLException {
-		return createListFromMap(super.resultSetToMap(rs));
-	}
-	@Override
-	public List<Employee> createListFromMap(Map<String,String[]> map) throws SQLException{
-		List<Employee> employees = Collections.emptyList();
-		for (Map<String, String> m: (List<Map<String, String>>)super.createListFromMap(map)){
+		List<Employee> employees = new ArrayList<>(); 
+		for (Map<String, String> m: (List<Map<String, String>>)super.createListFromResultSet(rs)){
 			employees.add(new EmployeeBuilder(m).get());
 		}
 		return employees;
 		
-		
 	}
-	
+
 	
 	
 }
