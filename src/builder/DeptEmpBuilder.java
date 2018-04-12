@@ -7,23 +7,7 @@ import transfer.DeptEmployee;
 
 public class DeptEmpBuilder {
 	//Class attributes
-	/**
-	 *
-	 */
-	private final String COL_NAME;
-	/**
-	 *
-	 */
-	private final String COL_CODE;
-	/**
-	 *
-	 */
 	private final DeptEmployee deptEmployee = new DeptEmployee();
-	
-	/**
-	 * Class Methods
-	 */
-	
 	
 	/**
 	 * Initial constructor
@@ -40,7 +24,7 @@ public class DeptEmpBuilder {
 	}
 	
 	public void setDeptNo(Map<String, String> map){
-		deptEmployee.setDeptNo(Integer.valueOf(map.get(DeptEmployee.COL_DEPT_CODE)));
+		deptEmployee.setDeptNo(map.get(DeptEmployee.COL_DEPT_CODE));
 	}
 	
 	public void setToDate(Map<String, String> map)	{

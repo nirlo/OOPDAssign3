@@ -9,17 +9,7 @@ import transfer.Employee;
 
 public class DeptManagerBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
+
 	private final DeptManager deptManager = new DeptManager();
 	
 	/**
@@ -42,7 +32,7 @@ public class DeptManagerBuilder {
 	}
 
 	public void setDeptNo(Map<String, String> map){
-		deptManager.setDeptNo(Integer.valueOf(map.get(DeptManager.COL_DEPT_NO)));
+		deptManager.setDeptNo(map.get(DeptManager.COL_DEPT_NO));
 	}
 
 	public void setFromDate(Map<String, String> map){
