@@ -87,7 +87,7 @@ public class SalaryDAO implements DAO<Salary> {
 			pstmt = con.prepareStatement(GET_BY_CODE_SALARY);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			salary = factory.createFromResultSet(rs);
+			salary = (Salary) factory.createListFromResultSet(rs);
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

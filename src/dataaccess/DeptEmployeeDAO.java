@@ -88,7 +88,7 @@ public class DeptEmployeeDAO implements DAO<DeptEmployee> {
 			pstmt = con.prepareStatement(GET_BY_CODE_DEPT_EMPLOYEE);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			deptEmp = factory.createFromResultSet(rs);
+			deptEmp = (DeptEmployee) factory.createListFromResultSet(rs);
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

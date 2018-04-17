@@ -22,11 +22,11 @@ public class DeptEmployee {
 	/**
 	 * 
 	 */
-	private String emp_no;
+	private int emp_no;
 	/**
 	 * 
 	 */
-	private String dept_no;
+	private int dept_no;
 	/**
 	 * 
 	 */
@@ -54,35 +54,35 @@ public class DeptEmployee {
 
 	
 
-	public String getFromDate() {
-		return fromDate.toString();
+	public Date getFromDate() {
+		return fromDate;
 	}
 
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public String getToDate() {
-		return toDate.toString();
+	public Date getToDate() {
+		return toDate;
 	}
 
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 
-	public String getEmpNo() {
+	public int getEmpNo() {
 		return emp_no;
 	}
 
-	public void setEmpNo(String emp_no) {
+	public void setEmpNo(int emp_no) {
 		this.emp_no = emp_no;
 	}
 
-	public String getDeptNo() {
+	public int getDeptNo() {
 		return dept_no;
 	}
   
-	public void setDeptNo(String dept_no) {
+	public void setDeptNo(int dept_no) {
 		this.dept_no = dept_no;
 	}
 
@@ -93,8 +93,8 @@ public class DeptEmployee {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dept_no == null)?0:dept_no.hashCode());
-		result = prime * result + ((emp_no == null)?0:emp_no.hashCode());
+		result = prime * result + dept_no;
+		result = prime * result + emp_no;
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;
@@ -112,7 +112,7 @@ public class DeptEmployee {
 		if (getClass() != obj.getClass())
 			return false;
 		DeptEmployee other = (DeptEmployee) obj;
-		if (!dept_no.equals(other.dept_no))
+		if (dept_no != other.dept_no)
 			return false;
 		if (emp_no != other.emp_no)
 			return false;
@@ -128,6 +128,7 @@ public class DeptEmployee {
 			return false;
 		return true;
 	}
+
 	
 
 }

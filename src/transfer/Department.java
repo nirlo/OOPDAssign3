@@ -1,7 +1,5 @@
 package transfer;
 
-import java.util.Map;
-
 public class Department {
 	/**
 	 *
@@ -18,7 +16,7 @@ public class Department {
 	/**
 	 *
 	 */
-	private String code;
+	private int code;
 	
 	
 	public Department() {
@@ -31,7 +29,7 @@ public class Department {
 	/**
 	 *
 	 */
-	public String getCode() {return code;}
+	public int getCode() {return code;}
 
 	/**
 	 *
@@ -44,25 +42,23 @@ public class Department {
 	/**
 	 *
 	 */
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
-	
 	/* (non-Javadoc)
-	* @see java.lang.Object#hashCode()
-	*/
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + code.hashCode();
+		result = prime * result + code;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-	
 	/* (non-Javadoc)
-	* @see java.lang.Object#equals(java.lang.Object)
-	*/
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -72,7 +68,7 @@ public class Department {
 		if (getClass() != obj.getClass())
 			return false;
 		Department other = (Department) obj;
-		if (!code.equals(other.code))
+		if (code != other.code)
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -82,6 +78,6 @@ public class Department {
 		return true;
 	}
 	
-	
+
 	
 }

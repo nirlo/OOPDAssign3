@@ -16,9 +16,9 @@ public class DeptManager {
 	
 	public static final String COL_TO_DATE = "to_date";
 
-	private String empNo;
+	private int empNo;
 	
-	private String deptNo;
+	private int deptNo;
 	
 	private Date fromDate;
 	
@@ -43,50 +43,55 @@ public class DeptManager {
 
 	
 
-	public String getEmpNo() {
+	public int getEmpNo() {
 		return empNo;
 	}
 
-	public void setEmpNo(String empNo) {
+	public void setEmpNo(int empNo) {
 		this.empNo = empNo;
 	}
 
-	public String getDeptNo() {
+	public int getDeptNo() {
 		return deptNo;
 	}
 
-	public void setDeptNo(String deptNo) {
+	public void setDeptNo(int deptNo) {
 		this.deptNo = deptNo;
 	}
 
-	public String getFromDate() {
-		return fromDate.toString();
+	public Date getFromDate() {
+		return fromDate;
 	}
 
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public String getToDate() {
-		return toDate.toString();
+	public Date getToDate() {
+		return toDate;
 	}
 
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-
-		result = prime * result + ((deptNo == null)?0:deptNo.hashCode());
-		result = prime * result + ((empNo == null)?0:empNo.hashCode());
+		result = prime * result + deptNo;
+		result = prime * result + empNo;
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -96,7 +101,7 @@ public class DeptManager {
 		if (getClass() != obj.getClass())
 			return false;
 		DeptManager other = (DeptManager) obj;
-		if (!deptNo.equals(other.deptNo))
+		if (deptNo != other.deptNo)
 			return false;
 		if (empNo != other.empNo)
 			return false;
@@ -113,6 +118,7 @@ public class DeptManager {
 		return true;
 	}
 
+	
 	
 	
 }

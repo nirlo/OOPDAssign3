@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import factory.EmployeeFactory;
 import factory.Factory;
 import transfer.Employee;
 
@@ -35,6 +34,7 @@ public class EmployeeDAO implements DAO<Employee> {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Employee> getAll() {
 		List<Employee> list = Collections.emptyList();
@@ -88,7 +88,7 @@ public class EmployeeDAO implements DAO<Employee> {
 			pstmt = con.prepareStatement(GET_BY_CODE_EMPLOYEE);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			employee = factory.createFromResultSet(rs);
+			employee = (Employee) factory.createListFromResultSet(rs);
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

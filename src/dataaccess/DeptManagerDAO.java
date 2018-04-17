@@ -91,7 +91,7 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 			pstmt = con.prepareStatement(GET_BY_CODE_DEPT_MANAGER);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			deptMan = factory.createFromResultSet(rs);
+			deptMan = (DeptManager) factory.createListFromResultSet(rs);
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

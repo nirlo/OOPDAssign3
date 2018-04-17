@@ -90,7 +90,7 @@ public class TitleDAO implements DAO<Title> {
 			pstmt = con.prepareStatement(GET_BY_CODE_TITLE);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			title = factory.createFromResultSet(rs);
+			title = (Title) factory.createListFromResultSet(rs);
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
