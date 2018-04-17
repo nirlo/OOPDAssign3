@@ -56,15 +56,5 @@ public class EmployeeLogic implements Logic<Employee> {
         }
 	}
 
-	@Override
-	public void validateDate(Date value, String fieldName, long max, long min, boolean isNullAllowed) {
-		//
-	}
-
-	@Override
-	public void validateInt(int value, String fieldName, int max, int min, boolean isNullAllowed) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

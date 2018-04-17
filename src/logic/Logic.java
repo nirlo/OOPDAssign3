@@ -3,7 +3,7 @@ package logic;
 import java.sql.Date;
 import java.util.List;
 
-interface Logic<T> {
+public interface Logic<T> {
 	
 	public List<T> getAll();
 	
@@ -15,7 +15,4 @@ interface Logic<T> {
 	
 	void validateString(String value, String fieldName, int max, boolean isNullAllowed);
 
-	void validateDate(Date value, String fieldName, long max, long min, boolean isNullAllowed);
-	
-	void validateInt(int value, String fieldName, int max, int min, boolean isNullAllowed);
 }

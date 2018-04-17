@@ -16,9 +16,9 @@ public class DeptManager {
 	
 	public final String COL_TO_DATE = "to_date";
 
-	private int empNo;
+	private String empNo;
 	
-	private int deptNo;
+	private String deptNo;
 	
 	private Date fromDate;
 	
@@ -43,32 +43,32 @@ public class DeptManager {
 
 	
 
-	public int getEmpNo() {
+	public String getEmpNo() {
 		return empNo;
 	}
 
-	public void setEmpNo(int empNo) {
+	public void setEmpNo(String empNo) {
 		this.empNo = empNo;
 	}
 
-	public int getDeptNo() {
+	public String getDeptNo() {
 		return deptNo;
 	}
 
-	public void setDeptNo(int deptNo) {
+	public void setDeptNo(String deptNo) {
 		this.deptNo = deptNo;
 	}
 
-	public Date getFromDate() {
-		return fromDate;
+	public String getFromDate() {
+		return fromDate.toString();
 	}
 
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public Date getToDate() {
-		return toDate;
+	public String getToDate() {
+		return toDate.toString();
 	}
 
 	public void setToDate(Date toDate) {
@@ -79,8 +79,8 @@ public class DeptManager {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + deptNo;
-		result = prime * result + empNo;
+		result = prime * result + ((deptNo == null)?0:deptNo.hashCode());
+		result = prime * result + ((empNo == null)?0:empNo.hashCode());
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;

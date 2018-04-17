@@ -52,8 +52,8 @@ public class Employee {
 		this.empNo = empNo;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
+	public String getBirthDate() {
+		return birthDate.toString();
 	}
 
 	public void setBirthDate(Date birthDate) {
@@ -84,8 +84,8 @@ public class Employee {
 		this.gender = gender;
 	}
 
-	public Date getHireDate() {
-		return hireDate;
+	public String getHireDate() {
+		return hireDate.toString();
 	}
 
 	public void setHireDate(Date hireDate) {
