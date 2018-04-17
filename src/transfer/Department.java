@@ -16,7 +16,7 @@ public class Department {
 	/**
 	 * 
 	 */
-	private int code;
+	private String code;
 	
 	
 	/**
@@ -43,7 +43,7 @@ public class Department {
 	/**
 	 * 
 	 */
-	public int getCode() {return code;}
+	public String getCode() {return code;}
 
 	/**
 	 * 
@@ -55,7 +55,7 @@ public class Department {
 	/**
 	 * 
 	 */
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 

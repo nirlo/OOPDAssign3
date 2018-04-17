@@ -15,7 +15,7 @@ public class Title {
 	public final String COL_TO_DATE = "to_date";
 
 	
-	private int empNo;
+	private String empNo;
 	
 	private String title;
 	
@@ -32,7 +32,7 @@ public class Title {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + empNo;
+		result = prime * result + ((empNo == null)? 0 : empNo.hashCode());
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
@@ -88,14 +88,14 @@ public class Title {
 	/**
 	 * @return the empNo
 	 */
-	public int getEmpNo() {
+	public String getEmpNo() {
 		return empNo;
 	}
 
 	/**
 	 * @param empNo the empNo to set
 	 */
-	public void setEmpNo(int empNo) {
+	public void setEmpNo(String empNo) {
 		this.empNo = empNo;
 	}
 
@@ -116,8 +116,8 @@ public class Title {
 	/**
 	 * @return the fromDate
 	 */
-	public Date getFromDate() {
-		return fromDate;
+	public String getFromDate() {
+		return fromDate.toString();
 	}
 
 	/**
@@ -130,8 +130,8 @@ public class Title {
 	/**
 	 * @return the toDate
 	 */
-	public Date getToDate() {
-		return toDate;
+	public String getToDate() {
+		return toDate.toString();
 	}
 
 	/**
