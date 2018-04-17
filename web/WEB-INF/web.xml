@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+
+    <servlet>
+        <servlet-name>EmployeeTable</servlet-name>
+        <servlet-class>view.EmployeeTableView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DepartmentTable</servlet-name>
+        <servlet-class>view.DepartmentTableView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeptEmpTable</servlet-name>
+        <servlet-class>view.DeptEmployeeTableView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeptManagerTable</servlet-name>
+        <servlet-class>view.DeptManagerView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SalaryTable</servlet-name>
+        <servlet-class>view.SalaryTableView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TitleTable</servlet-name>
+        <servlet-class>view.TitleTableView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>form</servlet-name>
+        <servlet-class>view.AddEmployeeForm</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>EmployeeTable</servlet-name>
+        <url-pattern>/Employees</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DepartmentTable</servlet-name>
+        <url-pattern>/Departments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeptEmpTable</servlet-name>
+        <url-pattern>/DepartmentsToEmployees</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeptManagerView</servlet-name>
+        <url-pattern>/Managers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SalaryTable</servlet-name>
+        <url-pattern>/Salaries</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TitleTable</servlet-name>
+        <url-pattern>/Titles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>form</servlet-name>
+        <url-pattern>/addEmployee</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/Registrar</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+</web-app>
