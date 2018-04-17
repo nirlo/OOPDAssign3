@@ -1,8 +1,9 @@
 package logic;
 
+import java.sql.Date;
 import java.util.List;
 
-interface Logic<T> {
+public interface Logic<T> {
 	
 	public List<T> getAll();
 	
@@ -13,4 +14,5 @@ interface Logic<T> {
 	void validate(T t);
 	
 	void validateString(String value, String fieldName, int max, boolean isNullAllowed);
+
 }

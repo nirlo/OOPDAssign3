@@ -22,7 +22,7 @@ public class DeptEmployee {
 	/**
 	 * 
 	 */
-	private int emp_no;
+	private String emp_no;
 	/**
 	 * 
 	 */
@@ -54,34 +54,34 @@ public class DeptEmployee {
 
 	
 
-	public Date getFromDate() {
-		return fromDate;
+	public String getFromDate() {
+		return fromDate.toString();
 	}
 
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public Date getToDate() {
-		return toDate;
+	public String getToDate() {
+		return toDate.toString();
 	}
 
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 
-	public int getEmpNo() {
+	public String getEmpNo() {
 		return emp_no;
 	}
 
-	public void setEmpNo(int emp_no) {
+	public void setEmpNo(String emp_no) {
 		this.emp_no = emp_no;
 	}
 
 	public String getDeptNo() {
 		return dept_no;
 	}
-
+  
 	public void setDeptNo(String dept_no) {
 		this.dept_no = dept_no;
 	}
@@ -93,8 +93,8 @@ public class DeptEmployee {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + dept_no.hashCode();
-		result = prime * result + emp_no;
+		result = prime * result + ((dept_no == null)?0:dept_no.hashCode());
+		result = prime * result + ((emp_no == null)?0:emp_no.hashCode());
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;

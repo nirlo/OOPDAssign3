@@ -60,4 +60,5 @@ public class DTOFactoryCreator {
 //
 //	public static<T> List<T> getResultSetAsList(Class<?> type, ResultSet rs){
 //	}
+
 }

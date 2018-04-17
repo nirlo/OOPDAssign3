@@ -32,7 +32,7 @@ public class Department {
 	 *
 	 */
 	public String getCode() {return code;}
-	
+
 	/**
 	 *
 	 * @param map
