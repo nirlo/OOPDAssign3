@@ -32,7 +32,7 @@ public class DeptManagerBuilder {
 	}
 
 	public void setDeptNo(Map<String, String> map){
-		deptManager.setDeptNo(map.get(DeptManager.COL_DEPT_NO));
+		deptManager.setDeptNo(Integer.valueOf(map.get(DeptManager.COL_DEPT_NO)));
 	}
 
 	public void setFromDate(Map<String, String> map){
