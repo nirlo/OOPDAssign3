@@ -6,19 +6,19 @@ public class DeptEmployee {
 	/**
 	 * 
 	 */
-	public final String COL_EMP_NO = "emp_no";
+	public static final String COL_EMP_NO = "emp_no";
 	/**
 	 * 
 	 */
-	public final String COL_DEPT_CODE = "dept_num";
+	public static final String COL_DEPT_CODE = "dept_num";
 	/**
 	 * 
 	 */
-	public final String COL_FROM_DATE = "from_date";
+	public static final String COL_FROM_DATE = "from_date";
 	/**
 	 * 
 	 */
-	public final String COL_TO_DATE = "to_date";
+	public static final String COL_TO_DATE = "to_date";
 	/**
 	 * 
 	 */
@@ -81,8 +81,8 @@ public class DeptEmployee {
 	public String getDeptNo() {
 		return dept_no;
 	}
-
-	public void setToDate(String dept_no) {
+  
+	public void setDeptNo(String dept_no) {
 		this.dept_no = dept_no;
 	}
 
@@ -112,7 +112,7 @@ public class DeptEmployee {
 		if (getClass() != obj.getClass())
 			return false;
 		DeptEmployee other = (DeptEmployee) obj;
-		if (dept_no != other.dept_no)
+		if (!dept_no.equals(other.dept_no))
 			return false;
 		if (emp_no != other.emp_no)
 			return false;

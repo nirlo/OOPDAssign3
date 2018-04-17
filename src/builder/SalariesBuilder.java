@@ -1,74 +1,45 @@
 package builder;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.util.Map;
 
 import transfer.Employee;
+import transfer.Salary;
 
 public class SalariesBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
-	private Employee employee = new Employee();
-	
-	/**
-	 * Class Methods
-	 */
-	
-	
+
+	private final Salary salary = new Salary();
+		
 	/**
 	 * Initial constructor
 	 */
-	public SalariesBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
+	public SalariesBuilder(Map<String, String> map) {
+		this.setSalary(map);
+		this.setEmpNo(map);
+		this.setFromDate(map);
+		this.setToDate(map);
 	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
+
+
+	public void setEmpNo(Map<String, String> map){
+		salary.setEmpNo(Integer.valueOf(map.get(Salary.COL_EMP_NO)));
 	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
+
+	public void setSalary(Map<String, String> map){
+		salary.setSalary(Double.valueOf(map.get(Salary.COL_SALARY)));
 	}
-	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
+
+	public void setFromDate(Map<String, String> map){
+		salary.setFromDate(Date.valueOf(map.get(Salary.COL_FROM_DATE)));
 	}
-	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
+
+	public void setToDate(Map<String, String> map){
+		salary.setToDate(Date.valueOf(map.get(Salary.COL_TO_DATE)));
+		
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	public Employee get() {
-		return employee;
+	public Salary get() {
+		return salary;
 	}
 }

@@ -5,14 +5,14 @@ import java.sql.Date;
 public class Salary {
 
 
-	public final String COL_EMP_NO = "emp_no";
+	public static final String COL_EMP_NO = "emp_no";
 
 
-	public final String COL_SALARY = "salary";
+	public static final String COL_SALARY = "salary";
 
-	public final String COL_FROM_DATE = "from_date";
+	public static final String COL_FROM_DATE = "from_date";
 	
-	public final String COL_TO_DATE = "to_date";
+	public static final String COL_TO_DATE = "to_date";
 	
 	
 	private int empNo;

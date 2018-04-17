@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import builder.Builder;
+import factory.DTOFactoryCreator;
 import factory.DeptManagerFactory;
 import factory.Factory;
 import transfer.DeptManager;
@@ -33,7 +34,8 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 	
 	
 	public DeptManagerDAO() {
-		factory = new DeptManagerFactory();
+		factory = DTOFactoryCreator.getFactory(DeptManager.class);
+
 	}
 
 	@Override
@@ -47,7 +49,7 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 			con = ds.createConnection();
 			pstmt = con.prepareStatement(GET_ALL_DEPT_MANAGER);
 			rs = pstmt.executeQuery();
-			list = factory.createListFromResultSet(rs);
+			list = (List<DeptManager>)factory.createListFromResultSet(rs);
 			
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);

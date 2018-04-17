@@ -1,5 +1,6 @@
 package dataaccess;
 
+import factory.DTOFactoryCreator;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +31,8 @@ public class EmployeeDAO implements DAO<Employee> {
 	
 	
 	public EmployeeDAO() {
-		factory = new EmployeeFactory();
+		factory = DTOFactoryCreator.getFactory(Employee.class);
+
 	}
 
 	@Override
@@ -44,7 +46,7 @@ public class EmployeeDAO implements DAO<Employee> {
 			con = ds.createConnection();
 			pstmt = con.prepareStatement(GET_ALL_EMPLOYEES);
 			rs = pstmt.executeQuery();
-			list = factory.createListFromResultSet(rs);
+			list = (List<Employee>)factory.createListFromResultSet(rs);
 			
 		}catch(SQLException ex) {
 			Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);

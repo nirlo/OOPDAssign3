@@ -6,15 +6,15 @@ public class DeptManager {
 	/**
 	 * 
 	 */
-	public final String COL_EMP_NO = "emp_no";
+	public static final String COL_EMP_NO = "emp_no";
 	/**
 	 * 
 	 */
-	public final String COL_DEPT_NO = "dept_no";
+	public static final String COL_DEPT_NO = "dept_no";
 	
-	public final String COL_FROM_DATE = "from_date";
+	public static final String COL_FROM_DATE = "from_date";
 	
-	public final String COL_TO_DATE = "to_date";
+	public static final String COL_TO_DATE = "to_date";
 
 	private String empNo;
 	
@@ -79,6 +79,7 @@ public class DeptManager {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+
 		result = prime * result + ((deptNo == null)?0:deptNo.hashCode());
 		result = prime * result + ((empNo == null)?0:empNo.hashCode());
 		result = prime * result + ((fromDate == null) ? 0 : fromDate.hashCode());
@@ -95,7 +96,7 @@ public class DeptManager {
 		if (getClass() != obj.getClass())
 			return false;
 		DeptManager other = (DeptManager) obj;
-		if (deptNo != other.deptNo)
+		if (!deptNo.equals(other.deptNo))
 			return false;
 		if (empNo != other.empNo)
 			return false;

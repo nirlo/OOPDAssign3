@@ -1,79 +1,68 @@
 package transfer;
 
+import java.util.Map;
+
 public class Department {
 	/**
-	 * 
+	 *
 	 */
-	public final String COL_NAME = "dept_no";
+	public static final String COL_NAME = "dept_no";
 	/**
-	 * 
+	 *
 	 */
-	public final String COL_CODE = "dept_name";
+	public static final String COL_CODE = "dept_name";
 	/**
-	 * 
+	 *
 	 */
 	private String name;
 	/**
-	 * 
+	 *
 	 */
 	private String code;
 	
 	
-	/**
-	 * 
-	 */
 	public Department() {
-		this("name", 0);
 	}
-
 	/**
-	 * 
-	 */
-	public Department(String name, int code) {
-		this.name = name;
-		this.code = code;
-	}
-
-
-	/**
-	 * 
+	 *
 	 */
 	public String getName() {return name;}
-
+	
 	/**
-	 * 
+	 *
 	 */
 	public String getCode() {return code;}
 
 	/**
-	 * 
+	 *
+	 * @param map
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	/**
-	 * 
+	 *
 	 */
 	public void setCode(String code) {
 		this.code = code;
 	}
-
+	
 	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+	* @see java.lang.Object#hashCode()
+	*/
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + code;
+		result = prime * result + code.hashCode();
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
+	
 	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+	* @see java.lang.Object#equals(java.lang.Object)
+	*/
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -83,7 +72,7 @@ public class Department {
 		if (getClass() != obj.getClass())
 			return false;
 		Department other = (Department) obj;
-		if (code != other.code)
+		if (!code.equals(other.code))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -92,7 +81,7 @@ public class Department {
 			return false;
 		return true;
 	}
-
+	
 	
 	
 }

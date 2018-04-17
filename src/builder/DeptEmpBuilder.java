@@ -1,74 +1,41 @@
 package builder;
 
-import java.sql.ResultSet;
+import java.sql.Date;
 import java.util.Map;
+import transfer.DeptEmployee;
 
-import transfer.Employee;
 
 public class DeptEmpBuilder {
 	//Class attributes
-	/**
-	 * 
-	 */
-	private final String COL_NAME;
-	/**
-	 * 
-	 */
-	private final String COL_CODE;
-	/**
-	 * 
-	 */
-	private Employee employee = new Employee();
-	
-	/**
-	 * Class Methods
-	 */
-	
+	private final DeptEmployee deptEmployee = new DeptEmployee();
 	
 	/**
 	 * Initial constructor
 	 */
-	public DeptEmpBuilder() {
-		COL_NAME = null;
-		COL_CODE = null;
-		//TODO
+	public DeptEmpBuilder(Map<String, String> map) {
+		this.setEmpNo(map);
+		this.setToDate(map);
+		this.setFromDate(map);
+		this.setDeptNo(map);
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setName(ResultSet rs) {
-		//TODO
-	}
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setName(Map<String, String[]> map) {
-		//TODO
+	public void setEmpNo(Map<String, String> map){
+		deptEmployee.setEmpNo(Integer.valueOf(map.get(DeptEmployee.COL_EMP_NO)));
 	}
 	
-	/**
-	 * 
-	 * @param rs
-	 */
-	public void setCode(ResultSet rs) {
-		//TODO
+	public void setDeptNo(Map<String, String> map){
+		deptEmployee.setDeptNo(map.get(DeptEmployee.COL_DEPT_CODE));
 	}
 	
-	/**
-	 * 
-	 * @param map
-	 */
-	public void setCode(Map<String, String[]> map) {
-		//TODO
+	public void setToDate(Map<String, String> map)	{
+		deptEmployee.setToDate(Date.valueOf(map.get(DeptEmployee.COL_TO_DATE)));
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	public Employee get() {
-		return employee;
+	
+	public void setFromDate(Map<String, String> map){
+		deptEmployee.setFromDate(Date.valueOf(map.get(DeptEmployee.COL_FROM_DATE)));
+	}
+
+	public DeptEmployee get(){
+		return deptEmployee;
 	}
 }

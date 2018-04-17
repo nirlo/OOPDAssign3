@@ -1,46 +1,22 @@
 package factory;
 
+import builder.DeptManagerBuilder;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-public class DeptManagerFactory extends AbstractFactory {
-
-	/**
-	 * 
-	 */
+import transfer.DeptManager;
+import java.util.ArrayList;
+public class DeptManagerFactory extends AbstractFactory<DeptManager>{
+	protected DeptManagerFactory(){}
 	@Override
-	public <T> T createFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DeptManager> createListFromResultSet(ResultSet rs) throws SQLException{
+		List<DeptManager> list = new ArrayList<>(); 
+		for (Map<String, String> m: (List<Map<String, String>>)super.createListFromResultSet(rs)){
+			list.add(new DeptManagerBuilder(m).get());
+		}
+		return list;
+		
 	}
-	
-	/**
-	 * 
-	 */
-	@Override
-	public List<?> createListFromResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	/**
-	 * 
-	 */
-	@Override
-	public <T> T createFromMap(Map<String, String[]> map) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/**
-	 * 
-	 */
-	@Override
-	public List<?> createListResultSet(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	
 }
