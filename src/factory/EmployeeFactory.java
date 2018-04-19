@@ -10,11 +10,15 @@ import java.util.Map;
 import transfer.Employee;
 
 public class EmployeeFactory extends AbstractFactory<Employee> {
+	/**
+	 * Protected constructor so that method can only be accessed using {@link DTOFactoryCreator}
+	 */
 	protected EmployeeFactory(){}
 	/**
-	 *
-	 * @return
-	 * @throws java.sql.SQLException
+	 * Converts a {@link ResultSet} into a List of {@link Employee}
+	 * @param rs ResultSet
+	 * @return List\<Employee/>
+	 * @throws SQLException 
 	 */
 	@Override
 	public List<Employee> createListFromResultSet(ResultSet rs) throws SQLException {

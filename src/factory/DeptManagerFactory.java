@@ -9,7 +9,16 @@ import java.util.Map;
 import transfer.DeptManager;
 import java.util.ArrayList;
 public class DeptManagerFactory extends AbstractFactory<DeptManager>{
+	/**
+	 * Protected constructor so that method can only be accessed using {@link DTOFactoryCreator}
+	 */
 	protected DeptManagerFactory(){}
+	/**
+	 * Convert a {@link ResultSet} into a List of {@link DeptManager}
+	 * @param rs ResultSet
+	 * @return List\<DeptManager\>
+	 * @throws SQLException 
+	 */
 	@Override
 	public List<DeptManager> createListFromResultSet(ResultSet rs) throws SQLException{
 		List<DeptManager> list = new ArrayList<>(); 

@@ -8,17 +8,12 @@ import transfer.DeptManager;
 import transfer.Employee;
 
 public class DeptManagerBuilder {
-	//Class attributes
-
+	
 	private final DeptManager deptManager = new DeptManager();
-	
+
 	/**
-	 * Class Methods
-	 */
-	
-	
-	/**
-	 * Initial constructor
+	 * Constructor which calls all methods for its corresponding transfer object
+	 * @param map 
 	 */
 	public DeptManagerBuilder(Map<String, String> map) {
 		this.setDeptNo(map);
@@ -27,6 +22,10 @@ public class DeptManagerBuilder {
 		this.setToDate(map);
 	}
 
+	/**
+	 * Setter methods for fields 
+	 * @param map 
+	 */
 	public void setEmpNo(Map<String, String> map){
 		deptManager.setEmpNo(Integer.valueOf(map.get(DeptManager.COL_EMP_NO)));
 	}
@@ -43,7 +42,11 @@ public class DeptManagerBuilder {
 		deptManager.setToDate(Date.valueOf(map.get(DeptManager.COL_TO_DATE)));
 		
 	}
-	
+	/**
+	 * Getter method for transfer Object
+	 * @return @Link DeptManager object
+	 */
+
 	public DeptManager get() {
 		return deptManager;
 	}

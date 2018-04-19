@@ -11,6 +11,13 @@ import java.util.Map;
 
 public abstract class AbstractFactory<T> implements Factory<T> {
 
+	
+	/**
+	 * Method converts {@link ResultSet} into a List of HashMap for ease of processing
+	 * @param rs ResultSet
+	 * @return {@link List}
+	 * @throws SQLException 
+	 */
 	@Override
 	public List<?> createListFromResultSet(ResultSet rs) throws SQLException{
 		final int columnNum = rs.getMetaData().getColumnCount();

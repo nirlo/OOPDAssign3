@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface Factory<T> {
 	/**
-	 * 
+	 * Convert a {@link ResultSet} into a List of some type T
 	 * @param rs
 	 * @return
 	 */

@@ -4,9 +4,10 @@ import java.sql.Date;
 
 public class Salary {
 
-
+	/**
+	 * Static final variable referencing ResultSet obtained from database
+	 */
 	public static final String COL_EMP_NO = "emp_no";
-
 
 	public static final String COL_SALARY = "salary";
 
@@ -14,7 +15,9 @@ public class Salary {
 	
 	public static final String COL_TO_DATE = "to_date";
 	
-	
+	/**
+	 * Private fields used to store individual entries
+	 */
 	private int empNo;
 	
 	private double salary;
@@ -23,24 +26,6 @@ public class Salary {
 	
 	private Date toDate;
 	
-	/**
-	 * 
-	 */
-	public Salary() {
-		//TODO
-	}
-
-	/**
-	 * 
-	 */
-	public Salary(String name, String code) {
-		//TODO
-	}
-
-
-
-
-
 
 	public int getEmpNo() {
 		return empNo;
@@ -91,9 +76,9 @@ public class Salary {
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * Auto-generated hasCode method
+	 * @return {@link int}
 	 */
 	@Override
 	public int hashCode() {
@@ -107,9 +92,10 @@ public class Salary {
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
+	/**
+	 * Auto-generated equals method
+	 * @param {@link Object}
+	 * @return {@link boolean}
 	 */
 	@Override
 	public boolean equals(Object obj) {

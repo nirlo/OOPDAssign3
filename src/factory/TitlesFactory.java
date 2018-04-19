@@ -10,8 +10,16 @@ import java.util.Map;
 import transfer.Title;
 
 public class TitlesFactory extends AbstractFactory<Title>{
+	/**
+	 * Protected constructor so that method can only be accessed using {@link DTOFactoryCreator}
+	 */
 	protected TitlesFactory(){}
-
+	/**
+	 * Method used to create a List<Title>
+	 * @param rs ResultSet
+	 * @return List \<Title\> 
+	 * @throws SQLException 
+	 */
 	@Override
 	public List<Title> createListFromResultSet(ResultSet rs) throws SQLException{
 		List<Title> list = new ArrayList<>();

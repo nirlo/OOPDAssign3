@@ -2,11 +2,11 @@ package transfer;
 
 public class Department {
 	/**
-	 *
+	 * Static final values referencing columns within the database ResultSet
 	 */
 	public static final String COL_NAME = "dept_no";
 	/**
-	 *
+	 * Static final values referencing columns within the database ResultSet
 	 */
 	public static final String COL_CODE = "dept_name";
 	/**
@@ -18,9 +18,6 @@ public class Department {
 	 */
 	private int code;
 	
-	
-	public Department() {
-	}
 	/**
 	 *
 	 */
@@ -45,8 +42,9 @@ public class Department {
 	public void setCode(int code) {
 		this.code = code;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * Auto-generated hasCode method
+	 * @return {@link int}
 	 */
 	@Override
 	public int hashCode() {
@@ -56,8 +54,10 @@ public class Department {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
+	/**
+	 * Auto-generated equals method
+	 * @param {@link Object}
+	 * @return {@link boolean}
 	 */
 	@Override
 	public boolean equals(Object obj) {

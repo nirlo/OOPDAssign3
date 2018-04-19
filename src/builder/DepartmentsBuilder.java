@@ -13,16 +13,18 @@ public class DepartmentsBuilder {
 	
 	
 	/**
-	 * Initial constructor
+	 * Constructor which also sets value for transfer object
+	 * @param map 
 	 */
-	public DepartmentsBuilder() {
-	}
-
 	public DepartmentsBuilder(Map<String, String> map){
 		this.setName(map);
 		this.setCode(map);
 	}
 
+	/**
+	 * Setter methods for transfer object
+	 * @param map 
+	 */
 	public void setName(Map<String, String> map){
 		department.setName(map.get(Department.COL_NAME));
 	}
@@ -31,8 +33,8 @@ public class DepartmentsBuilder {
 		department.setCode(Integer.valueOf(map.get(Department.COL_CODE)));
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter method for transfer object
+	 * return {@link Department} object
 	 */
 	public Department get(){
 		return this.department;

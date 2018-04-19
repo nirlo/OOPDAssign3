@@ -11,18 +11,12 @@ import transfer.Title;
 
 public class DTOFactoryCreator {
 	/**
-	 * 
+	 * Private constructor which should not be accessed
 	 */
-	private static final String PACKAGE = "dtofactory";
-	/**
-	 * 
-	 */
-	private static final String FACTORY = "Factory";
-	
 	private DTOFactoryCreator() { } 
 	/**
-	 * 
-	 * @param factoryName
+	 * Getter method which returns the factory for the object
+	 * @param Class<?>type of the transfer object to return the factor for that particular transfer object. If not found returns null
 	 * @return
 	 */
 	public static Factory getFactory(Class<?> type) {
@@ -47,18 +41,4 @@ public class DTOFactoryCreator {
 		}
 		else return null;
 	}
-	
-//	/**
-//	 * 
-//	 * @param type
-//	 * @return
-//	 */
-//	public static Factory createBuilder(Class<?> type) {
-//		return null;
-//		//TODO
-//	}
-//
-//	public static<T> List<T> getResultSetAsList(Class<?> type, ResultSet rs){
-//	}
-
 }

@@ -37,23 +37,6 @@ public class DeptEmployee {
 	private Date toDate;
 	
 	
-	/**
-	 * 
-	 */
-	public DeptEmployee() {
-		//TODO
-	}
-
-	/**
-	 * 
-	 */
-	public DeptEmployee(String name, String code) {
-		//TODO
-	}
-
-
-	
-
 	public Date getFromDate() {
 		return fromDate;
 	}
@@ -85,9 +68,9 @@ public class DeptEmployee {
 	public void setDeptNo(int dept_no) {
 		this.dept_no = dept_no;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * Auto-generated hasCode method
+	 * @return {@link int}
 	 */
 	@Override
 	public int hashCode() {
@@ -99,9 +82,10 @@ public class DeptEmployee {
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
+	/**
+	 * Auto-generated equals method
+	 * @param {@link Object}
+	 * @return {@link boolean}
 	 */
 	@Override
 	public boolean equals(Object obj) {

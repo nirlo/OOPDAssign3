@@ -8,12 +8,12 @@ import transfer.Employee;
 import transfer.Salary;
 
 public class SalariesBuilder {
-	//Class attributes
 
 	private final Salary salary = new Salary();
 		
 	/**
-	 * Initial constructor
+	 * Constructor for the transfer object 
+	 * @param map 
 	 */
 	public SalariesBuilder(Map<String, String> map) {
 		this.setSalary(map);
@@ -22,7 +22,10 @@ public class SalariesBuilder {
 		this.setToDate(map);
 	}
 
-
+	/**
+	 * Setter method for the transfer object
+	 * @param map 
+	 */
 	public void setEmpNo(Map<String, String> map){
 		salary.setEmpNo(Integer.valueOf(map.get(Salary.COL_EMP_NO)));
 	}
@@ -37,8 +40,12 @@ public class SalariesBuilder {
 
 	public void setToDate(Map<String, String> map){
 		salary.setToDate(Date.valueOf(map.get(Salary.COL_TO_DATE)));
-		
+
 	}
+	/**
+	 * Getter method for the transfer object
+	 * @return {@link Salary} object
+	 */
 	public Salary get() {
 		return salary;
 	}

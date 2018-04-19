@@ -14,9 +14,9 @@ public class EmployeeBuilder implements Builder<Employee> {
 	
 	
 	/**
-	 * Initial constructor
+	 * Constructor which calls setter method for transfer object
+	 * @param map 
 	 */
-	
 	public EmployeeBuilder(Map<String, String> map){
 		this.setEmpNo(map);
 		this.setFirstName(map);
@@ -25,7 +25,11 @@ public class EmployeeBuilder implements Builder<Employee> {
 		this.setGender(map);
 		this.setHireDate(map);
 	}
-	
+
+	/**
+	 * Setter method for transfer object
+	 * @param map 
+	 */
 	public void setEmpNo(Map<String, String> map){
 		employee.setEmpNo(Integer.valueOf(map.get(Employee.COL_EMP_NO)));
 	}
@@ -48,7 +52,10 @@ public class EmployeeBuilder implements Builder<Employee> {
 		employee.setBirthDate(Date.valueOf(map.get(Employee.COL_HIRE_DATE)));
 		
 	}
-
+	/**
+	 * Getter method for the transfer object
+	 * @return {@link Employee} object
+	 */
 	public Employee get(){
 		return employee;
 	}

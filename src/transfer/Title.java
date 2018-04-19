@@ -3,17 +3,16 @@ package transfer;
 import java.sql.Date;
 
 public class Title {
-
-
+	
+	
 	public static final String COL_EMP_NO = "emp_no";
-
-
+	
 	public static final String COL_TITLE = "title";
 	
 	public static final String COL_FROM_DATE = "from_date";
 	
 	public static final String COL_TO_DATE = "to_date";
-
+	
 	
 	private int empNo;
 	
@@ -24,9 +23,64 @@ public class Title {
 	private Date toDate;
 	
 	
+	/**
+	 * @return the empNo
+	 */
+	public int getEmpNo() {
+		return empNo;
+	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * @param empNo the empNo to set
+	 */
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
+	}
+	
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+	
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	/**
+	 * @return the fromDate
+	 */
+	public Date getFromDate() {
+		return fromDate;
+	}
+	
+	/**
+	 * @param fromDate the fromDate to set
+	 */
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+	
+	/**
+	 * @return the toDate
+	 */
+	public Date getToDate() {
+		return toDate;
+	}
+	
+	/**
+	 * @param toDate the toDate to set
+	 */
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+	/**
+	 * Auto-generated hasCode method
+	 * @return {@link int}
 	 */
 	@Override
 	public int hashCode() {
@@ -38,9 +92,11 @@ public class Title {
 		result = prime * result + ((toDate == null) ? 0 : toDate.hashCode());
 		return result;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
+	
+	/**
+	 * Auto-generated equals method
+	 * @param {@link Object}
+	 * @return {@link boolean}
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -70,80 +126,7 @@ public class Title {
 			return false;
 		return true;
 	}
-
-	/**
-	 * 
-	 */
-	public Title() {
-		//TODO
-	}
-
-	/**
-	 * 
-	 */
-	public Title(String name, String code) {
-		//TODO
-	}
-
-	/**
-	 * @return the empNo
-	 */
-	public int getEmpNo() {
-		return empNo;
-	}
-
-	/**
-	 * @param empNo the empNo to set
-	 */
-	public void setEmpNo(int empNo) {
-		this.empNo = empNo;
-	}
-
-	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
-
-	/**
-	 * @param title the title to set
-	 */
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	/**
-	 * @return the fromDate
-	 */
-	public Date getFromDate() {
-		return fromDate;
-	}
-
-	/**
-	 * @param fromDate the fromDate to set
-	 */
-	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
-	}
-
-	/**
-	 * @return the toDate
-	 */
-	public Date getToDate() {
-		return toDate;
-	}
-
-	/**
-	 * @param toDate the toDate to set
-	 */
-	public void setToDate(Date toDate) {
-		this.toDate = toDate;
-	}
-
-
-
-
-
-
+	
+	
+	
 }

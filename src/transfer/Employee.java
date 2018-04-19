@@ -30,20 +30,6 @@ public class Employee {
 	
 	private Date hireDate;
 
-
-	public Employee() {
-		//TODO
-	}
-
-	/**
-	 * 
-	 */
-	public Employee(String name, String code) {
-		//TODO
-	}
-
-	
-
 	public int getEmpNo() {
 		return empNo;
 	}
@@ -91,9 +77,9 @@ public class Employee {
 	public void setHireDate(Date hireDate) {
 		this.hireDate = hireDate;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	/**
+	 * Auto-generated hasCode method
+	 * @return {@link int}
 	 */
 	@Override
 	public int hashCode() {
@@ -107,9 +93,10 @@ public class Employee {
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		return result;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
+	/**
+	 * Auto-generated equals method
+	 * @param {@link Object}
+	 * @return {@link boolean}
 	 */
 	@Override
 	public boolean equals(Object obj) {

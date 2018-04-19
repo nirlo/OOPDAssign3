@@ -10,7 +10,8 @@ public class DeptEmpBuilder {
 	private final DeptEmployee deptEmployee = new DeptEmployee();
 	
 	/**
-	 * Initial constructor
+	 * Constructor for transfer object
+	 * @param map 
 	 */
 	public DeptEmpBuilder(Map<String, String> map) {
 		this.setEmpNo(map);
@@ -18,7 +19,11 @@ public class DeptEmpBuilder {
 		this.setFromDate(map);
 		this.setDeptNo(map);
 	}
-	
+
+	/**
+	 * Setter methods for fields within the transfer object
+	 * @param map 
+	 */
 	public void setEmpNo(Map<String, String> map){
 		deptEmployee.setEmpNo(Integer.valueOf(map.get(DeptEmployee.COL_EMP_NO)));
 	}
@@ -34,7 +39,10 @@ public class DeptEmpBuilder {
 	public void setFromDate(Map<String, String> map){
 		deptEmployee.setFromDate(Date.valueOf(map.get(DeptEmployee.COL_FROM_DATE)));
 	}
-
+	/**
+	 * Getter method for the transfer method
+	 * @return {@link DeptEmployee} obj
+	 */
 	public DeptEmployee get(){
 		return deptEmployee;
 	}
