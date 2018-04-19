@@ -5,12 +5,22 @@ import java.util.List;
 import transfer.DeptManager;
 import dataaccess.DAO;
 import dataaccess.DeptManagerDAO;
-
+/**
+ * Logic for processing a Department Manager Table to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class DeptManagerLogic implements Logic<DeptManager> {
-	
-	private static final int NUMBER_MAX_LENGTH = 45;
+	/**
+	 * Ensure that the length of the department Name is not longer than 45
+	 */
 	private static final int NAME_MAX_LENGTH = 45;
 	
+	/**
+	 * DataAccess that processes the Department Manager
+	 */
 	private DAO<DeptManager> DAO = null;
 	
 	public DeptManagerLogic() {
@@ -31,12 +41,14 @@ public class DeptManagerLogic implements Logic<DeptManager> {
 
 	@Override
 	public void clean(DeptManager t) {
-		
+		if(t.getDeptNo() != null) {
+			t.setDeptNo(t.getDeptNo().trim());
+		}
 	}
 
 	@Override
 	public void validate(DeptManager t) {
-		//validateString(t.getName(), "first_name", NAME_MAX_LENGTH, false);
+		validateString(t.getDeptNo(), "dept_no", NAME_MAX_LENGTH, false);
 	}
 
 	@Override

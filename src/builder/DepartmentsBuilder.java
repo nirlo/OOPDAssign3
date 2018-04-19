@@ -28,7 +28,7 @@ public class DepartmentsBuilder {
 	}
 
 	public void setCode(Map<String, String> map){
-		department.setCode(Integer.valueOf(map.get(Department.COL_CODE)));
+		department.setCode((map.get(Department.COL_CODE)));
 	}
 	/**
 	 * 

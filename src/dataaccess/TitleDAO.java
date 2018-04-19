@@ -9,12 +9,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import builder.Builder;
 import factory.DTOFactoryCreator;
 import factory.Factory;
-import factory.TitlesFactory;
-import transfer.Employee;
-import transfer.Salary;
 import transfer.Title;
 
 public class TitleDAO implements DAO<Title> {
@@ -33,10 +29,12 @@ public class TitleDAO implements DAO<Title> {
 	
 	
 	
+	@SuppressWarnings("unchecked")
 	public TitleDAO() {
-		factory = DTOFactoryCreator.getFactory(Title.class);
+		factory = (Factory<Title>) DTOFactoryCreator.getFactory(Title.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Title> getAll() {
 		List<Title> list = Collections.emptyList();

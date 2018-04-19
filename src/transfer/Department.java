@@ -16,7 +16,7 @@ public class Department {
 	/**
 	 *
 	 */
-	private int code;
+	private String code;
 	
 	
 	public Department() {
@@ -29,7 +29,7 @@ public class Department {
 	/**
 	 *
 	 */
-	public int getCode() {return code;}
+	public String getCode() {return code;}
 
 	/**
 	 *
@@ -42,7 +42,7 @@ public class Department {
 	/**
 	 *
 	 */
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 	/* (non-Javadoc)
@@ -52,7 +52,7 @@ public class Department {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + code;
+		result = prime * result + ((code == null) ? 0 : name.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}

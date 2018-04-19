@@ -1,11 +1,8 @@
 package builder;
 
 import java.sql.Date;
-import java.sql.ResultSet;
 import java.util.Map;
 import transfer.DeptManager;
-
-import transfer.Employee;
 
 public class DeptManagerBuilder {
 	//Class attributes
@@ -32,7 +29,7 @@ public class DeptManagerBuilder {
 	}
 
 	public void setDeptNo(Map<String, String> map){
-		deptManager.setDeptNo(Integer.valueOf(map.get(DeptManager.COL_DEPT_NO)));
+		deptManager.setDeptNo(map.get(DeptManager.COL_DEPT_NO));
 	}
 
 	public void setFromDate(Map<String, String> map){

@@ -29,8 +29,9 @@ public class EmployeeDAO implements DAO<Employee> {
 	
 	
 	
+	@SuppressWarnings("unchecked")
 	public EmployeeDAO() {
-		factory = DTOFactoryCreator.getFactory(Employee.class);
+		factory = (Factory<Employee>) DTOFactoryCreator.getFactory(Employee.class);
 
 	}
 

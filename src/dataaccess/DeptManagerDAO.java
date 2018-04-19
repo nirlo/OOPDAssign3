@@ -9,13 +9,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import builder.Builder;
 import factory.DTOFactoryCreator;
-import factory.DeptManagerFactory;
 import factory.Factory;
 import transfer.DeptManager;
-import transfer.Employee;
-import transfer.Salary;
 
 public class DeptManagerDAO implements DAO<DeptManager> {
 	
@@ -33,11 +29,13 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 	
 	
 	
+	@SuppressWarnings("unchecked")
 	public DeptManagerDAO() {
-		factory = DTOFactoryCreator.getFactory(DeptManager.class);
+		factory = (Factory<DeptManager>) DTOFactoryCreator.getFactory(DeptManager.class);
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<DeptManager> getAll() {
 		List<DeptManager> list = Collections.emptyList();
@@ -125,7 +123,7 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 		try( Connection con = new DataSource().createConnection();
                 PreparedStatement pstmt = con.prepareStatement( INSERT_DEPT_MANAGER);){
             pstmt.setLong(1, t.getEmpNo());
-            pstmt.setLong(2, t.getDeptNo());
+            pstmt.setString(2, t.getDeptNo());
             pstmt.setDate(3, t.getFromDate());
             pstmt.setDate(4, t.getToDate());
             pstmt.executeUpdate();
@@ -140,7 +138,7 @@ public class DeptManagerDAO implements DAO<DeptManager> {
                 PreparedStatement pstmt = con.prepareStatement( UPDATE_DEPT_MANAGER);){
             pstmt.setDate(1, t.getToDate());
             pstmt.setLong(2, t.getEmpNo());
-            pstmt.setLong(3,  t.getDeptNo());
+            pstmt.setString(3,  t.getDeptNo());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -152,7 +150,7 @@ public class DeptManagerDAO implements DAO<DeptManager> {
 		try( Connection con = new DataSource().createConnection();
                 PreparedStatement pstmt = con.prepareStatement( DELETE_DEPT_MANAGER);){
             pstmt.setLong(1, t.getEmpNo());
-            pstmt.setLong(2,  t.getDeptNo());
+            pstmt.setString(2,  t.getDeptNo());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);

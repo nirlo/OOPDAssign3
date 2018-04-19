@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import factory.DepartmentsFactory;
 import factory.Factory;
 import transfer.Department;
 
@@ -30,10 +29,12 @@ public class DepartmentDAO implements DAO<Department> {
 	
 	
 	
+	@SuppressWarnings("unchecked")
 	public DepartmentDAO() {
-		factory = DTOFactoryCreator.getFactory(Department.class);
+		factory = (Factory<Department>) DTOFactoryCreator.getFactory(Department.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Department> getAll() {
 		List<Department> list = Collections.emptyList();
@@ -120,7 +121,7 @@ public class DepartmentDAO implements DAO<Department> {
 	public void add(Department t) {
 		try( Connection con = new DataSource().createConnection();
                 PreparedStatement pstmt = con.prepareStatement( INSERT_DEPARTMENT);){
-            pstmt.setLong(1, t.getCode());
+            pstmt.setString(1, t.getCode());
             pstmt.setString(2, t.getName());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
@@ -133,7 +134,7 @@ public class DepartmentDAO implements DAO<Department> {
 		try( Connection con = new DataSource().createConnection();
                 PreparedStatement pstmt = con.prepareStatement( UPDATE_DEPARTMENT);){
             pstmt.setString(1, t.getName());
-            pstmt.setLong(2, t.getCode());
+            pstmt.setString(2, t.getCode());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -144,7 +145,7 @@ public class DepartmentDAO implements DAO<Department> {
 	public void delete(Department t) {
 		try( Connection con = new DataSource().createConnection();
                 PreparedStatement pstmt = con.prepareStatement( DELETE_DEPARTMENT);){
-            pstmt.setLong(1, t.getCode());
+            pstmt.setString(1, t.getCode());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);

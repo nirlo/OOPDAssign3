@@ -1,10 +1,8 @@
 package builder;
 
 import java.sql.Date;
-import java.sql.ResultSet;
 import java.util.Map;
 
-import transfer.Employee;
 import transfer.Salary;
 
 public class SalariesBuilder {
