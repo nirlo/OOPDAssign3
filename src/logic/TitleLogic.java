@@ -5,12 +5,18 @@ import java.util.List;
 import transfer.Title;
 import dataaccess.DAO;
 import dataaccess.TitleDAO;
-
+/**
+ * Logic for processing a Title Table to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class TitleLogic implements Logic<Title> {
 	
-	private static final int NUMBER_MAX_LENGTH = 45;
-	private static final int NAME_MAX_LENGTH = 45;
-	
+	/**
+	 * DataAccess that processes the Employee
+	 */
 	private DAO<Title> DAO = null;
 	
 	public TitleLogic() {

@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import factory.Factory;
-import factory.SalariesFactory;
 import transfer.Salary;
 
 public class SalaryDAO implements DAO<Salary> {
@@ -30,10 +29,12 @@ public class SalaryDAO implements DAO<Salary> {
 	
 	
 	
+	@SuppressWarnings("unchecked")
 	public SalaryDAO() {
-		factory = DTOFactoryCreator.getFactory(Salary.class);
+		factory = (Factory<Salary>) DTOFactoryCreator.getFactory(Salary.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Salary> getAll() {
 		List<Salary> list = Collections.emptyList();

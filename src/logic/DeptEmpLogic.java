@@ -5,12 +5,22 @@ import java.util.List;
 import transfer.DeptEmployee;
 import dataaccess.DAO;
 import dataaccess.DeptEmployeeDAO;
-
+/**
+ * Logic for processing a Department Employee Table to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class DeptEmpLogic implements Logic<DeptEmployee> {
-	
+	/**
+	 * Ensure that the length of the department code is not longer than 45
+	 */
 	private static final int NUMBER_MAX_LENGTH = 45;
-	private static final int NAME_MAX_LENGTH = 45;
 	
+	/**
+	 * DataAccess that processes the Department Employee
+	 */
 	private DAO<DeptEmployee> DAO = null;
 	
 	public DeptEmpLogic() {
@@ -31,12 +41,14 @@ public class DeptEmpLogic implements Logic<DeptEmployee> {
 
 	@Override
 	public void clean(DeptEmployee t) {
-		
+		if(t.getDeptNo() != null) {
+			t.setDeptNo(t.getDeptNo().trim());
+		}
 	}
 
 	@Override
 	public void validate(DeptEmployee t) {
-		//validateString(t.getName(), "first_name", NAME_MAX_LENGTH, false);
+		validateString(t.getDeptNo(), "Dept_no", NUMBER_MAX_LENGTH, false);
 	}
 
 	@Override

@@ -24,7 +24,7 @@ public class DeptEmpBuilder {
 	}
 	
 	public void setDeptNo(Map<String, String> map){
-		deptEmployee.setDeptNo(Integer.valueOf(map.get(DeptEmployee.COL_DEPT_CODE)));
+		deptEmployee.setDeptNo(map.get(DeptEmployee.COL_DEPT_CODE));
 	}
 	
 	public void setToDate(Map<String, String> map)	{

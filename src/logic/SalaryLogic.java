@@ -5,12 +5,18 @@ import java.util.List;
 import transfer.Salary;
 import dataaccess.DAO;
 import dataaccess.SalaryDAO;
-
+/**
+ * Logic for processing a Salary Table to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class SalaryLogic implements Logic<Salary> {
 	
-	private static final int NUMBER_MAX_LENGTH = 45;
-	private static final int NAME_MAX_LENGTH = 45;
-	
+	/**
+	 * DataAccess that processes the Salary Table
+	 */
 	private DAO<Salary> DAO = null;
 	
 	public SalaryLogic() {

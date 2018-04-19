@@ -5,17 +5,28 @@ import java.util.List;
 import transfer.Department;
 import dataaccess.DAO;
 import dataaccess.DepartmentDAO;
-
+/**
+ * Logic for processing a department to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class DepartmentLogic implements Logic<Department> {
-	
+	/**
+	 * Ensure that the length of the department code is not longer than 45
+	 */
 	private static final int NUMBER_MAX_LENGTH = 45;
+	/**
+	 * Ensure that the length of the department Name is not longer than 45
+	 */
 	private static final int NAME_MAX_LENGTH = 45;
 	
-	private DAO<Department> DAO = null;
+	/**
+	 * DataAccess that processes the Department
+	 */
+	private DAO<Department> DAO = new DepartmentDAO();
 	
-	public DepartmentLogic() {
-		DAO = new DepartmentDAO();
-	}
 
 	@Override
 	public List<Department> getAll() {
@@ -31,12 +42,18 @@ public class DepartmentLogic implements Logic<Department> {
 
 	@Override
 	public void clean(Department t) {
-		
+		if(t.getCode() != null) {
+			t.setCode(t.getCode().trim());
+		}
+		if(t.getName() != null) {
+			t.setName(t.getName().trim());
+		}
 	}
 
 	@Override
 	public void validate(Department t) {
-		validateString(t.getName(), "first_name", NAME_MAX_LENGTH, false);
+		validateString(t.getName(), "Dept_name", NAME_MAX_LENGTH, false);
+		validateString(t.getName(), "Dept_no", NUMBER_MAX_LENGTH, false);
 	}
 
 	@Override

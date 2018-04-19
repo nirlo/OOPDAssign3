@@ -1,18 +1,30 @@
 package logic;
 
-import java.sql.Date;
 import java.util.List;
 
 import transfer.Employee;
 import dataaccess.DAO;
 import dataaccess.EmployeeDAO;
-
+/**
+ * Logic for processing a Employee Table to add or get them from the database
+ * 
+ * @author Phil Lou
+ * @author Nicholas Lockhart
+ *
+ */
 public class EmployeeLogic implements Logic<Employee> {
-	
-	private static final int NUMBER_MAX = 999999999;
-	private static final int NAME_MAX_LENGTH = 45;
+	/**
+	 * Maximum length that the gender code can be
+	 */
 	private static final int GENDER_MAX_LENGTH = 1;
+	/**
+	 * Ensure that the length of the Employee Name is not longer than 45
+	 */
+	private static final int NAME_MAX_LENGTH = 45;
 	
+	/**
+	 * DataAccess that processes the Employee
+	 */
 	private DAO<Employee> DAO = null;
 	
 	public EmployeeLogic() {
@@ -33,7 +45,15 @@ public class EmployeeLogic implements Logic<Employee> {
 
 	@Override
 	public void clean(Employee t) {
-		
+		if(t.getFirstName() != null) {
+			t.setFirstName(t.getFirstName().trim());
+		}
+		if(t.getLastName() != null) {
+			t.setLastName(t.getLastName().trim());
+		}
+		if(t.getGender() != null) {
+			t.setGender(t.getGender().trim());
+		}
 	}
 
 	@Override

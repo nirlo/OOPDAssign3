@@ -1,6 +1,5 @@
 package builder;
 
-import java.sql.ResultSet;
 import java.util.Map;
 import transfer.Employee;
 import java.sql.Date;

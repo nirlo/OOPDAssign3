@@ -1,7 +1,5 @@
 package factory;
 
-import java.sql.ResultSet;
-import java.util.List;
 import transfer.Department;
 import transfer.DeptEmployee;
 import transfer.DeptManager;
@@ -10,14 +8,7 @@ import transfer.Salary;
 import transfer.Title;
 
 public class DTOFactoryCreator {
-	/**
-	 * 
-	 */
-	private static final String PACKAGE = "dtofactory";
-	/**
-	 * 
-	 */
-	private static final String FACTORY = "Factory";
+
 	
 	private DTOFactoryCreator() { } 
 	/**
@@ -25,7 +16,7 @@ public class DTOFactoryCreator {
 	 * @param factoryName
 	 * @return
 	 */
-	public static Factory getFactory(Class<?> type) {
+	public static Factory<?> getFactory(Class<?> type) {
 		
 		if(type.equals(Department.class)){
 			return new DepartmentsFactory();
